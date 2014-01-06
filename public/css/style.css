@@ -14,31 +14,28 @@ body {
 /* Header CSS */
 #header-container {
   position: relative;
+  width: 100%;
+  height: 100px;
 }
 
 header {
   position: relative;
 }
 
-header h1 { 
-  float:left;
-  padding:9px 0 0 190px;
+header h1 {
+  position:absolute;
+  left:190px;
+  top:9px;
 }
 
 header .skip {
-  float:right;
-  padding:12px 190px 0 0;
+  position:absolute;
+  right:190px;
+  top:12px;
 }
 
-header .skip:hover, header .skip:focus {
-  background:url(../images/btn/btn_skip2.png) no-repeat left 24px;
-
-}
-
-@media screen and (max-width:768px){
-  header h1 { padding:20px 0 0 46px;}
-  header .skip { padding:24px 47px 0 0;}
-  
+header .skip:hover {
+  content:url(../images/btn/btn_skip2.png) no-repeat;
 }
 
 
@@ -56,3 +53,32 @@ header .skip:hover, header .skip:focus {
 footer {
   position: relative;
 }
+
+footer .text {
+  position:absolute;
+  left:46px;
+  top:52px;
+  font:14px/19px "NeoSansPro";
+}
+
+footer span {
+  display:none;
+}
+
+@media screen and (max-width:768px){
+  
+  /* Header */
+  header h1 { left:46px; top:18px;}
+  header .skip { right:46px; top:24px;}
+
+  /* Footer */
+  footer .text address { width:65%;}
+  footer span { display:block; position:absolute; right:46px; top:40px;}
+  footer span .facebook img { margin-right:6px;}
+  footer span .facebook:hover { margin-right:6px; content:url(../images/btn/btn_facebook2.png) no-repeat;}
+  footer span .email:hover { content:url(../images/btn/btn_mail2.png) no-repeat;}
+
+}
+
+
+
