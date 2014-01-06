@@ -20,6 +20,27 @@ header {
   position: relative;
 }
 
+header h1 { 
+  float:left;
+  padding:9px 0 0 190px;
+}
+
+header .skip {
+  float:right;
+  padding:12px 190px 0 0;
+}
+
+header .skip:hover, header .skip:focus {
+  background:url(../images/btn/btn_skip2.png) no-repeat left 24px;
+
+}
+
+@media screen and (max-width:768px){
+  header h1 { padding:20px 0 0 46px;}
+  header .skip { padding:24px 47px 0 0;}
+  
+}
+
 
 /* Content CSS */
 #main-container {
