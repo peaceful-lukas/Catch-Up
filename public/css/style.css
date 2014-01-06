@@ -1,8 +1,37 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+* {
+  
 }
 
-a {
-  color: #00B7FF;
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  position: relative;
+}
+
+/* Header CSS */
+#header-container {
+  position: relative;
+}
+
+header {
+  position: relative;
+}
+
+
+/* Content CSS */
+#main-container {
+  position: relative;
+}
+
+
+/* Footer CSS */
+#footer-container {
+  position: relative;
+}
+
+footer {
+  position: relative;
 }
