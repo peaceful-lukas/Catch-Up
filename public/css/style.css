@@ -129,22 +129,14 @@ footer span {
   margin-top:12px;
 }
 
-.main article a {
-  width: 22%;
-  height: 100%;
-}
 
-.main article a img {
-  width:22%;
-  height:100%;
+.main article ul li {
   float:left;
-  margin:0 4px 4px 0;
 }
 
-.main article .clear img {
-  clear:both;
-}
 
+
+   
 
 
 
