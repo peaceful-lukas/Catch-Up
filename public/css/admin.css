@@ -1,0 +1,84 @@
+.admin {
+  position: relative;
+  margin-left: 50px;
+  margin-right: 50px; 
+}
+
+/* Video Add Form */
+.admin .form {
+  position: relative;
+}
+
+.admin .form .property {
+  display: block;
+  width: 100%;
+  height: 50px;
+}
+
+.admin .form label {
+  display: inline-block;
+  position: absolute;
+}
+
+.admin .form input {
+  display: inline-block;
+  position: absolute;
+  left: 200px;
+  width: 200px;
+}
+
+.admin .form .property-thumbnail {
+  display: block;
+  width: 100%;
+  height: 150px;
+}
+
+.admin .form img.vid-thumb {
+  display: inline-block;
+  position: absolute;
+  left: 200px;
+  width: 150px;
+}
+
+.admin .form a.add-video {
+  padding: 10px;
+  border-radius: 1em;
+  background: #f00;
+}
+
+
+/* Video List */
+.admin ul.video-list {
+  position: relative;
+  padding: 0;
+  list-style-type: none;
+}
+
+.admin ul.video-list li.video-list-cell {
+  padding: 15px;
+}
+
+.admin ul.video-list li.video-list-cell:nth-child(odd) {
+  background: #ffffff;
+}
+
+.admin ul.video-list li.video-list-cell:nth-child(even) {
+  background: #ccf3fd;
+}
+
+.admin ul.video-list li.video-list-cell img {
+  display: inline-block;
+  width: 150px;
+}
+
+.admin ul.video-list li.video-list-cell p {
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.admin a.save-list {
+  padding: 10px;
+  border-radius: 1em;
+  background: #a3a3a3;
+}
