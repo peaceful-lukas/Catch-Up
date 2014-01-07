@@ -10,7 +10,7 @@ var VideoSchema = new Schema({
   title: { type: String, required: true },
   url: { type: String, required: true },
   thumbnail: { type: String, required: true },
-  order: { type: Number }
+  order: { type: Number, default: 0 }
 });
 
 
@@ -18,13 +18,14 @@ var VideoSchema = new Schema({
  * Static functions
  */
 VideoSchema.statics = {
-  
-  addVideo: function(vid) {
-    videoList.push(vid);
-  },
-  
-  removeVideo: function(vid) {
-    console.log('remove not supported yet.');
+  load: function(callback) {
+    this.find({}, {}, function(err, videos) {
+      if(err) throw new Error(err.message);
+      else {
+        videos = videos || [];
+        callback(videos);
+      }
+    });
   }
 }
 

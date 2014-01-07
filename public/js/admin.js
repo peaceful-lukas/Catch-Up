@@ -1,8 +1,7 @@
 
-
 $(document).ready(function() {
   // sortable list
-  $('.sortable').sortable();
+  $('.sortable').sortable({ connectWith: '.connected' });
   
   // thumbnailer
   $('#url').on('focusout', function(e) {
@@ -32,7 +31,7 @@ $(document).ready(function() {
       data: ajaxData,
       success: function(result) {
         if(result) {
-          alert('성공');
+          window.location = '/admin';
         }
         else {
           alert(result.message);

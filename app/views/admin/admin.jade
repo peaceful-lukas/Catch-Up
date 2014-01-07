@@ -24,11 +24,11 @@ block content
       
       a.add-video 추가
     
-    ul.video-list(class='sortable list')
+    ul.video-list(class='connected sortable list')
       - videoData.forEach(function(data) {
         li.video-list-cell(draggable='true')
-          img(src='http://img.youtube.com/vi/jo_B4LTHi3I/0.jpg')
-          p #{data.src}
+          a(href='#{data.url}'): img(src='#{data.thumbnail}')
+          p #{data.title}
       - });
     
     
