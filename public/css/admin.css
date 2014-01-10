@@ -1,85 +1,36 @@
-.admin {
-  position: relative;
-  margin-left: 50px;
-  margin-right: 50px; 
-}
-
-/* Video Add Form */
-.admin .form {
-  position: relative;
-}
-
-.admin .form .property {
-  display: block;
+.login {
   width: 100%;
-  height: 50px;
+  height: 500px;
+  margin: 0 auto;
+  text-align: center;
 }
 
-.admin .form label {
-  display: inline-block;
-  position: absolute;
-}
-
-.admin .form input {
-  display: inline-block;
-  position: absolute;
-  left: 200px;
-  width: 200px;
-}
-
-.admin .form .property-thumbnail {
-  display: block;
-  width: 100%;
-  height: 150px;
-}
-
-.admin .form img.vid-thumb {
-  display: inline-block;
-  position: absolute;
-  left: 200px;
-  width: 150px;
-}
-
-.admin .form a.add-video {
-  padding: 10px;
-  border-radius: 1em;
-  background: #f00;
-}
-
-
-/* Video List */
-.admin ul.video-list {
+.login p.login-message {
   position: relative;
-  padding: 0;
-  list-style-type: none;
 }
 
-.admin ul.video-list li.video-list-cell {
-  padding: 15px;
-  cursor: move;
+.login p.login-failed-message {
+  position: relative;
+  color: #dc1e26;;
 }
 
-.admin ul.video-list li.video-list-cell:nth-child(odd) {
-  background: #ffffff;
+.login input.login-input {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  width: 305px;
+  height: 40px;
+  border-color: #dddddd;
+  font-size: 20px;
 }
 
-.admin ul.video-list li.video-list-cell:nth-child(even) {
-  background: #ccf3fd;
-}
-
-.admin ul.video-list li.video-list-cell img {
-  display: inline-block;
-  width: 150px;
-}
-
-.admin ul.video-list li.video-list-cell p {
-  display: inline-block;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.admin a.save-list {
-  padding: 10px;
-  border-radius: 1em;
-  background: #a3a3a3;
+.login a.login-enter {
+  position: relative;
+  top: 50px;
+  padding-left: 130px;
+  padding-right: 130px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: #ffffff;
+  background-color: #dc1e26;
 }

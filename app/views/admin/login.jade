@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+  link(rel='stylesheet', href='/css/admin.css')
+  
+  .login
+    form(action='/admin/login', method='POST', id='login-form')
+      - if( loginFailed ) {
+        p.login-failed-message 관리자 코드가 잘못되었습니다.
+      - }
+      - else {
+        p.login-message 관리자 코드를 입력해주세요.
+      - }
+      input.login-input(type='password', name='adminCode')
+      a.login-enter ENTER
+    
+    
+    

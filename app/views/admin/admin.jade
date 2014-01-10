@@ -3,34 +3,33 @@ extends ../layout
 block content
   link(rel='stylesheet', href='css/admin.css')
   
-  .admin
-    h1 컨텐츠 관리
+  .upload
+    h3 UPLOAD
     
-    .form
-      .property
-        label(for='url') Youtube 동영상 URL
-        input(type='text', name='url', id='url')
+    .upload-cell
+      label.title-label TITLE
+      input.title-input(type='text', name='title', id='title')
+    
+    .upload-cell
+      label.url-label URL
+      input.url-input(type='text', name='url', id='url')
+      a.url-load LOADING
       
-      .property
-        label(for='title') 동영상 제목
-        input(type='text', name='title', id='title')
-        
-      .property-thumbnail
-        label(for='thumbnail') 동영상 썸네일
-        img.vid-thumb(src='images/no-thumbnail.jpg')
-        input(type='hidden', name='thumbnail', id='thumbnail')
+    .upload-cell
+      img.upload-thumbnail(src='http://img.youtube.com/vi/qswqqi1EKQc/0.jpg')
+      img.upload-thumbnail(src='http://img.youtube.com/vi/qswqqi1EKQc/1.jpg')
+      img.upload-thumbnail(src='http://img.youtube.com/vi/qswqqi1EKQc/2.jpg')
+      img.upload-thumbnail(src='http://img.youtube.com/vi/qswqqi1EKQc/3.jpg')
+    
+    .upload-cell
+      p 대표 프레임을 선택하시고 UPLOAD 버튼을 누르시면 영상이 업로드됩니다.
+      a.upload UPLOAD
       
-      input(type='hidden', name='vid', id='vid')
-      
-      a.add-video 추가
-    
-    ul.video-list(class='connected sortable list')
-      - videoData.forEach(function(data) {
-        li.video-list-cell(draggable='true')
-          a(href='#{data.url}'): img(src='#{data.thumbnail}')
-          p #{data.title}
-      - });
+  .list
+    h3 LIST
     
     
-    a.save-list 저장
+    
+    
+    
     

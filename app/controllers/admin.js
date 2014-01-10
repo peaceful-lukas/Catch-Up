@@ -1,6 +1,11 @@
 var Video = require('mongoose').model('Video');
 
 module.exports = {
+  login: function(req, res) {
+    req.method = 'GET';
+    res.redirect('/admin');
+  },
+  
   admin: function(req, res) {
     Video.load(function(videos) {
       res.render('admin/admin.jade', { videoData: videos });
