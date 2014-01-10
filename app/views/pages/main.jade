@@ -1,57 +1,51 @@
 extends ../layout
 
 block content
-  section
-    article
-      ul
-        li
-          a(class="play" href='')
+  .container
+    section
+      article
+        ul
+          li
             img(class="bu_blind" src="images/bu/bu_blind.png")
             img(class="content" src='images/img_content1.png')
-        li: a(href=''): img(class="content" src='images/img_content2.png')
-        li: a(href=''): img(class="content" src='images/img_content3.png')
-        li: a(href=''): img(class="content" src='images/img_content4.png')
-        li: a(href=''): img(class="content" src='images/img_content5.png')
-        li: a(href=''): img(class="content" src='images/img_content6.png')
-        li: a(href=''): img(class="content" src='images/img_content7.png')
-        li: a(href=''): img(class="content" src='images/img_content8.png')
-        li: a(href=''): img(class="content" src='images/img_content9.png')
-        li: a(href=''): img(class="content" src='images/img_content10.png')
-        li: a(href=''): img(class="content" src='images/img_content11.png')
-        li: a(href=''): img(class="content" src='images/img_content12.png')
-        li: a(href=''): img(class="content" src='images/img_content1.png')
-        li: a(href=''): img(class="content" src='images/img_content2.png')
-        li: a(href=''): img(class="content" src='images/img_content3.png')
-        li: a(href=''): img(class="content" src='images/img_content4.png')
-        li: a(href=''): img(class="content" src='images/img_content5.png')
-        li: a(href=''): img(class="content" src='images/img_content6.png')
-        li: a(href=''): img(class="content" src='images/img_content7.png')
-        li: a(href=''): img(class="content" src='images/img_content8.png')
-        li: a(href=''): img(class="content" src='images/img_content9.png')
-        li: a(href=''): img(class="content" src='images/img_content10.png')
-        li: a(href=''): img(class="content" src='images/img_content11.png')
-        li: a(href=''): img(class="content" src='images/img_content12.png')
+          li: img(class="content" src='images/img_content2.png')
+          li: img(class="content" src='images/img_content3.png')
+          li: img(class="content" src='images/img_content4.png')
+          li: img(class="content" src='images/img_content5.png')
+          li: img(class="content" src='images/img_content6.png')
+          li: img(class="content" src='images/img_content7.png')
+          li: img(class="content" src='images/img_content8.png')
+          li: img(class="content" src='images/img_content9.png')
+          li: img(class="content" src='images/img_content10.png')
+          li: img(class="content" src='images/img_content11.png')
+          li: img(class="content" src='images/img_content12.png')
+          li: img(class="content" src='images/img_content1.png')
+          li: img(class="content" src='images/img_content2.png')
+          li: img(class="content" src='images/img_content3.png')
+          li: img(class="content" src='images/img_content4.png')
+          li: img(class="content" src='images/img_content5.png')
+          li: img(class="content" src='images/img_content6.png')
+          li: img(class="content" src='images/img_content7.png')
+          li: img(class="content" src='images/img_content8.png')
+          li: img(class="content" src='images/img_content9.png')
+          li: img(class="content" src='images/img_content10.png')
+          li: img(class="content" src='images/img_content11.png')
+          li: img(class="content" src='images/img_content12.png')
 
 
-  .blurred
-  .popup
-    a(class='before' href=''): img(src='images/btn/btn_left.png' alt='이전 장면으로 이동')
-    a(class='after' href=''): img(src='images/btn/btn_right.png' alt='다음 장면으로 이동')
-    .frame  
-      .top
-        h2 JAPAN KELLOGG'S SUMMER
-        p
-          span 2
-          span  /
-          span  34
-        a(class='close' href=''): img(src='images/btn/btn_x.png' alt='닫기 버튼')
-      iframe(src='http://www.youtube.com/embed/ji5_MqicxSo?showinfo=0')
-
-  script.
-    $(document).ready(function(){
-      $('.play').click(function(){
-      });
-    });
+    .blurred
+    .popup
+      img(class='before' src='images/btn/btn_left.png' alt='이전 장면으로 이동')
+      img(class='after' src='images/btn/btn_right.png' alt='다음 장면으로 이동')
+      .frame  
+        .top
+          h2 JAPAN KELLOGG'S SUMMER
+          p
+            span 2
+            span  /
+            span  34
+          img(class="close" src='images/btn/btn_x.png' alt='닫기 버튼')
+        iframe(src='http://www.youtube.com/embed/NEPYp6P3bwk?showinfo=0')
 
 
 

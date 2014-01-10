@@ -1,0 +1,10 @@
+$(document).ready(function(){
+  $('.bu_blind').click(function(){
+    $('.blurred').show();
+    $('.popup').show();
+    });
+  $('.close').click(function(){
+    $('.blurred').hide();
+    $('.popup').hide();
+    });
+  });
