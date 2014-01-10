@@ -30,6 +30,17 @@ header h1 {
   padding:20px 0 0 0;
 }
 
+header .skip {
+  position:absolute;
+  right:0;
+  top:0;
+  cursor:pointer;
+}
+
+header .skip:hover {
+  content:url(../images/btn/btn_skip2.png);
+}
+
 header .menu {
   position:absolute;
   right:0;
@@ -85,13 +96,14 @@ section article ul li .play .btn_play {
   opacity:0;
 }
 
-section article ul li .play .bu_blind {
+section article ul li .bu_blind {
   position:absolute;
   width:100%;
   opacity:0;
+  cursor:pointer;
 }
 
-section article ul li .play .bu_blind:hover {
+section article ul li .bu_blind:hover {
   opacity:0.7;
 }
 
@@ -111,29 +123,32 @@ section article ul li .play .bu_blind:hover {
 
 .popup {
   display:none;
-  position:relative;
-  max-width:900px;
-  margin:100px auto;
+  position:absolute;
+  top:80px;
+  width:100%;
+  margin:0 auto;
   z-index:1100;
 }
 
-.popup a.before {
+.popup img.before {
   position:absolute;
-  top:50%;
+  top:45%;
   text-align:left;
+  cursor:pointer;
 }
 
-.popup a.before:hover {
+.popup img.before:hover {
   content:url(../images/btn/btn_left2.png);
 }
 
-.popup a.after {
+.popup img.after {
   position:absolute;
-  top:50%;
+  top:45%;
   right:0;
+  cursor:pointer;
 }
 
-.popup a.after:hover {
+.popup img.after:hover {
   content:url(../images/btn/btn_right2.png);
 }
 
@@ -165,13 +180,14 @@ section article ul li .play .bu_blind:hover {
   color:#666;
 }
 
-.popup .top a.close {
+.popup .top img.close {
   position:absolute;
   right:30px;
   top:39px;
+  cursor:pointer;
 }
 
-.popup .top a.close:hover {
+.popup .top img.close:hover {
   content:url(../images/btn/btn_x2.png);
 }
 
@@ -265,7 +281,9 @@ footer address {
 
 @media screen and (max-width:768px){
   header h1 { margin-left:5%;}
+  header .skip { margin-right:5%;}
   header h1 img { width:30%;}
+  header .skip { width:10%; top:10px;}
   header .menu { margin-right:5%; font-size:;}
   section article .bg { background:url(../images/bg/bg_background.png) no-repeat;}
   section article .intro { margin:15% 0; height:25%;}
@@ -284,11 +302,12 @@ footer address {
 @media screen and (max-width:500px){
   #header-container { height: 10%; }
   header h1 { padding:0;}
+  header .skip { top:0px;}
   header .menu { top:12px; font-size:12px;} 
   section .content1 img { width:50%;}
   section .content1 span { font-size:18px;}
   .popup .top h2 { font-size:14px;}
-  .popup .top a.close { top:20px;}
+  .popup .top img.close { top:20px;}
 
 
 }
@@ -298,12 +317,12 @@ footer address {
   .popup .top { height:80px;}
   .popup .top h2 { left:20px; top:20px;}
   .popup .top p { right:70px; top:20px;}
-  .popup .top a.close { right:25px; top:30px;}
+  .popup .top img.close { right:25px; top:30px;}
   .popup .frame iframe { height:451px; }
   
-  .popup  a.before { float:left; top:540px;}
-  .popup  a.after { float:right; top:540px;}
-  .popup .frame .top p { position:relative; top:580px; padding-left:135px; text-align:center;}
+  .popup  img.before { float:left; top:540px;}
+  .popup  img.after { float:right; top:540px;}
+  .popup .frame .top p { position:relative; top:565px; padding-left:135px; text-align:center;}
 }
 
 
