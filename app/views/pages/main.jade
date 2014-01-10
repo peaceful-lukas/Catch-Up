@@ -1,30 +1,57 @@
 extends ../layout
 
 block content
-  section(class='main')
+  section
     article
       ul
-        li: a(href=''): img(src='images/img_content1.png' width='222px' height='164px')
-        li: a(href=''): img(src='images/img_content2.png' width='222px' height='164px')
-        li: a(href=''): img(src='images/img_content3.png' width='222px' height='164px')
-        li: a(href=''): img(src='images/img_content4.png' width='222px' height='164px')
-        li: a(href=''): img(src='images/img_content5.png' width='222px' height='164px')
-        li: a(href=''): img(src='images/img_content6.png' width='222px' height='164px')
-        li: a(href=''): img(src='images/img_content7.png' width='222px' height='164px')
-        li: a(href=''): img(src='images/img_content8.png' width='222px' height='164px')
-        li: a(href=''): img(src='images/img_content9.png' width='222px' height='164px')
-        li: a(href=''): img(src='images/img_content10.png' width='222px' height='164px')
-        li: a(href=''): img(src='images/img_content11.png' width='222px' height='164px')
-        li: a(href=''): img(src='images/img_content12.png' width='222px' height='164px')
-        li: a(href=''): img(src='images/img_content1.png' width='222px' height='164px')
-        li: a(href=''): img(src='images/img_content2.png' width='222px' height='164px')
-        li: a(href=''): img(src='images/img_content3.png' width='222px' height='164px')
-        li: a(href=''): img(src='images/img_content4.png' width='222px' height='164px')
-        li: a(href=''): img(src='images/img_content5.png' width='222px' height='164px')
-        li: a(href=''): img(src='images/img_content6.png' width='222px' height='164px')
-        li: a(href=''): img(src='images/img_content7.png' width='222px' height='164px')
-        li: a(href=''): img(src='images/img_content8.png' width='222px' height='164px')
-        li: a(href=''): img(src='images/img_content9.png' width='222px' height='164px')
-        li: a(href=''): img(src='images/img_content10.png' width='222px' height='164px')
-        li: a(href=''): img(src='images/img_content11.png' width='222px' height='164px')
-        li: a(href=''): img(src='images/img_content12.png' width='222px' height='164px')
+        li
+          a(class="play" href='')
+            img(class="bu_blind" src="images/bu/bu_blind.png")
+            img(class="content" src='images/img_content1.png')
+        li: a(href=''): img(class="content" src='images/img_content2.png')
+        li: a(href=''): img(class="content" src='images/img_content3.png')
+        li: a(href=''): img(class="content" src='images/img_content4.png')
+        li: a(href=''): img(class="content" src='images/img_content5.png')
+        li: a(href=''): img(class="content" src='images/img_content6.png')
+        li: a(href=''): img(class="content" src='images/img_content7.png')
+        li: a(href=''): img(class="content" src='images/img_content8.png')
+        li: a(href=''): img(class="content" src='images/img_content9.png')
+        li: a(href=''): img(class="content" src='images/img_content10.png')
+        li: a(href=''): img(class="content" src='images/img_content11.png')
+        li: a(href=''): img(class="content" src='images/img_content12.png')
+        li: a(href=''): img(class="content" src='images/img_content1.png')
+        li: a(href=''): img(class="content" src='images/img_content2.png')
+        li: a(href=''): img(class="content" src='images/img_content3.png')
+        li: a(href=''): img(class="content" src='images/img_content4.png')
+        li: a(href=''): img(class="content" src='images/img_content5.png')
+        li: a(href=''): img(class="content" src='images/img_content6.png')
+        li: a(href=''): img(class="content" src='images/img_content7.png')
+        li: a(href=''): img(class="content" src='images/img_content8.png')
+        li: a(href=''): img(class="content" src='images/img_content9.png')
+        li: a(href=''): img(class="content" src='images/img_content10.png')
+        li: a(href=''): img(class="content" src='images/img_content11.png')
+        li: a(href=''): img(class="content" src='images/img_content12.png')
+
+
+  .blurred
+  .popup
+    a(class='before' href=''): img(src='images/btn/btn_left.png' alt='이전 장면으로 이동')
+    a(class='after' href=''): img(src='images/btn/btn_right.png' alt='다음 장면으로 이동')
+    .frame  
+      .top
+        h2 JAPAN KELLOGG'S SUMMER
+        p
+          span 2
+          span  /
+          span  34
+        a(class='close' href=''): img(src='images/btn/btn_x.png' alt='닫기 버튼')
+      iframe(src='http://www.youtube.com/embed/ji5_MqicxSo?showinfo=0')
+
+  script.
+    $(document).ready(function(){
+      $('.play').click(function(){
+      });
+    });
+
+
+
