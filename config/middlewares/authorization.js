@@ -13,14 +13,21 @@ module.exports = {
         next();
       }
       else {
-        res.render('admin/login.jade', {
-          loginFailed: true
-        });
+        var templateData = {
+          loginFailed: true,
+          pageInfo: 'login'
+        };
+        
+        res.render('admin/login.jade', templateData);
       }
     }
     
 		else {
-			res.render('admin/login.jade');
+      var templateData = {
+        pageInfo: 'login'
+      };
+      
+			res.render('admin/login.jade', templateData);
 		}
 	}
 }

@@ -1,30 +1,19 @@
 $(document).ready(function(){
-  var vidURLs = [ "http://www.youtube.com/embed/jRtN0kWGA7k?showinfo=0",
-                            "http://www.youtube.com/embed/dyharafaEeA?showinfo=0",
-                            "http://www.youtube.com/embed/2REkZG-dhHc?showinfo",
-                            "http://www.youtube.com/embed/jRtN0kWGA7k?showinfo=0",
-                             "http://www.youtube.com/embed/dyharafaEeA?showinfo=0",
-                             "http://www.youtube.com/embed/2REkZG-dhHc?showinfo",
-                             "http://www.youtube.com/embed/jRtN0kWGA7k?showinfo=0",
-                             "http://www.youtube.com/embed/dyharafaEeA?showinfo=0",
-                             "http://www.youtube.com/embed/2REkZG-dhHc?showinfo",
-                             "http://www.youtube.com/embed/jRtN0kWGA7k?showinfo=0",
-                             "http://www.youtube.com/embed/dyharafaEeA?showinfo=0",
-                             "http://www.youtube.com/embed/2REkZG-dhHc?showinfo",
-                             "http://www.youtube.com/embed/jRtN0kWGA7k?showinfo=0",
-                             "http://www.youtube.com/embed/dyharafaEeA?showinfo=0",
-                             "http://www.youtube.com/embed/2REkZG-dhHc?showinfo",
-                             "http://www.youtube.com/embed/jRtN0kWGA7k?showinfo=0",
-                             "http://www.youtube.com/embed/dyharafaEeA?showinfo=0",
-                             "http://www.youtube.com/embed/2REkZG-dhHc?showinfo",
-                             "http://www.youtube.com/embed/jRtN0kWGA7k?showinfo=0",
-                             "http://www.youtube.com/embed/dyharafaEeA?showinfo=0",
-                             "http://www.youtube.com/embed/2REkZG-dhHc?showinfo",
-                             "http://www.youtube.com/embed/jRtN0kWGA7k?showinfo=0",
-                             "http://www.youtube.com/embed/dyharafaEeA?showinfo=0",
-                             "http://www.youtube.com/embed/2REkZG-dhHc?showinfo",
-                             ];
+  
+  var vidURLs = [];
+  
+  var $videoInfo = $('li.video-info') || [];
+  for(var i=0; i<$videoInfo.length; i++) {
+    var videoId = $($videoInfo[i]).attr('vid');
+    var youtubeUrl = 'http://www.youtube.com/embed/' + videoId + '?showinfo=0';
+    vidURLs.push(youtubeUrl);
+  }
+  
+  console.log(vidURLs);
+  
+  
   $('.youtubeplayer_total').text(vidURLs.length);
+  
   $('.bu_blind').click(function(){
     $('.blurred').show();
     $('.popup').show();
@@ -32,11 +21,15 @@ $(document).ready(function(){
     $('.popup').attr('data-nth',nth);
     $('.youtube_player').attr('src', vidURLs[nth-1]);
     $('.youtubeplayer_nth').text(nth);
-    });
+  });
+  
+  
   $('.close2').click(function(){
     $('.blurred').hide();
     $('.popup').hide();
-    });
+  });
+  
+  
   $('.before2').click(function(){
     var nth = $('.popup').attr('data-nth');
     nth = Number(nth);
@@ -49,7 +42,9 @@ $(document).ready(function(){
     $('.popup').attr('data-nth', nth);
     $('.youtubeplayer_nth').text(nth);
     $('.youtube_player').attr('src', vidURLs[nth-1]);
-    });
+  });
+  
+  
   $('.after2').click(function(){
     var nth = $('.popup').attr('data-nth');
     nth = Number(nth);
@@ -59,8 +54,10 @@ $(document).ready(function(){
     else {
       nth = nth + 1;
     }
+  
     $('.popup').attr('data-nth', nth);
     $('.youtubeplayer_nth').text(nth);
     $('.youtube_player').attr('src', vidURLs[nth-1]);
-    });
   });
+  
+});

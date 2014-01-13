@@ -6,9 +6,15 @@ module.exports = {
     res.redirect('/admin');
   },
   
+  logout: function(req, res) {
+    delete req.session.adminCode;
+    res.json({ success: true });
+  },
+  
   admin: function(req, res) {
     Video.load(function(videos) {
       var templateData = {
+        pageInfo: 'admin',
         videoData: videos
       };
       
@@ -20,6 +26,7 @@ module.exports = {
     Video.load(function(videos) {
       
       var templateData = {
+        pageInfo: 'admin',
         videoData: videos
       };
       
@@ -50,6 +57,10 @@ module.exports = {
       
       // edit 실패 : 발생 확률 거의 없음( 클라이언트에서 null 체크 다 함. )
       else {
+        var templateData = {
+          pageInfo: 'admin'
+        };
+        
         res.render('admin/error.jade', templateData);
       }
     });

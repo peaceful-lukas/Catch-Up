@@ -5,79 +5,11 @@ block content
     section
       article
         ul
-          li
-            img(class="bu_blind" src="images/bu/bu_blind.png" alt='' data-nth='1')
-            img(class="content" src='images/img_content1.png')
-          li
-            img(class="bu_blind" src="images/bu/bu_blind.png" alt='' data-nth='2')
-            img(class="content" src='images/img_content2.png')
-          li
-            img(class="bu_blind" src="images/bu/bu_blind.png" alt='' data-nth='3')
-            img(class="content" src='images/img_content3.png')
-          li
-            img(class="bu_blind" src="images/bu/bu_blind.png" alt='' data-nth='4')
-            img(class="content" src='images/img_content4.png')
-          li
-            img(class="bu_blind" src="images/bu/bu_blind.png" alt='' data-nth='5')
-            img(class="content" src='images/img_content5.png')
-          li
-            img(class="bu_blind" src="images/bu/bu_blind.png" alt='' data-nth='6')
-            img(class="content" src='images/img_content6.png')
-          li
-            img(class="bu_blind" src="images/bu/bu_blind.png" alt='' data-nth='7')
-            img(class="content" src='images/img_content7.png')
-          li
-            img(class="bu_blind" src="images/bu/bu_blind.png" alt='' data-nth='8')
-            img(class="content" src='images/img_content8.png')
-          li
-            img(class="bu_blind" src="images/bu/bu_blind.png" alt='' data-nth='9')
-            img(class="content" src='images/img_content9.png')
-          li
-            img(class="bu_blind" src="images/bu/bu_blind.png" alt='' data-nth='10')
-            img(class="content" src='images/img_content10.png')
-          li
-            img(class="bu_blind" src="images/bu/bu_blind.png" alt='' data-nth='11')
-            img(class="content" src='images/img_content11.png')
-          li
-            img(class="bu_blind" src="images/bu/bu_blind.png" alt='' data-nth='12')
-            img(class="content" src='images/img_content12.png')
-          li
-            img(class="bu_blind" src="images/bu/bu_blind.png" alt='' data-nth='13')
-            img(class="content" src='images/img_content1.png')
-          li
-            img(class="bu_blind" src="images/bu/bu_blind.png" alt='' data-nth='14')
-            img(class="content" src='images/img_content2.png')
-          li
-            img(class="bu_blind" src="images/bu/bu_blind.png" alt='' data-nth='15')
-            img(class="content" src='images/img_content3.png')
-          li
-            img(class="bu_blind" src="images/bu/bu_blind.png" alt='' data-nth='16')
-            img(class="content" src='images/img_content4.png')
-          li
-            img(class="bu_blind" src="images/bu/bu_blind.png" alt='' data-nth='17')
-            img(class="content" src='images/img_content5.png')
-          li
-            img(class="bu_blind" src="images/bu/bu_blind.png" alt='' data-nth='18')
-            img(class="content" src='images/img_content6.png')
-          li
-            img(class="bu_blind" src="images/bu/bu_blind.png" alt='' data-nth='19')
-            img(class="content" src='images/img_content7.png')
-          li
-            img(class="bu_blind" src="images/bu/bu_blind.png" alt='' data-nth='20')
-            img(class="content" src='images/img_content8.png')
-          li
-            img(class="bu_blind" src="images/bu/bu_blind.png" alt='' data-nth='21')
-            img(class="content" src='images/img_content9.png')
-          li
-            img(class="bu_blind" src="images/bu/bu_blind.png" alt='' data-nth='22')
-            img(class="content" src='images/img_content10.png')
-          li
-            img(class="bu_blind" src="images/bu/bu_blind.png" alt='' data-nth='23')
-            img(class="content" src='images/img_content11.png')
-          li
-            img(class="bu_blind" src="images/bu/bu_blind.png" alt='' data-nth='24')
-            img(class="content" src='images/img_content12.png')
-
+          - videoData.forEach(function(video, index) {
+            li.video-info(title='#{video.title}', url='#{video.url}', vid='#{video.vid}')
+              img(class="bu_blind" src="images/bu/bu_blind.png" alt='' data-nth='#{index+1}')
+              img(class="content" src='#{video.thumbnail}')  
+          - });
 
     .blurred
     .popup
@@ -94,7 +26,4 @@ block content
             span(class='youtubeplayer_total') 24
           img(class='close' src='images/btn/btn_x.png' alt='닫기 버튼')
           img(class='close2' src='images/btn/btn_x2.png' alt='닫기 버튼')
-        iframe(class='youtube_player' src='http://www.youtube.com/embed/jRtN0kWGA7k?showinfo=0')
-
-
-
+        iframe(class='youtube_player')
