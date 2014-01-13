@@ -8,7 +8,7 @@ module.exports = {
   
   production: {
     db: {
-      host: 'mongodb://localhost/catchup-dev'
+      host: 'mongodb://heroku_app21208894:n67c2mbl0n8f9oucum84ngm43r@ds061248.mongolab.com:61248/heroku_app21208894'
     },
     root: require('path').normalize(__dirname + '/..')
   }
