@@ -28,7 +28,7 @@ VideoSchema.statics = {
   },
   
   modify: function(video, callback) {
-    this.update({ vid: video.vid }, video, function(err, video) {
+    this.update({ _id: video.mid }, video, function(err, video) {
       if(err) throw new Error(err.message);
       else {
         callback(video);

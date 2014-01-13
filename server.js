@@ -28,7 +28,7 @@ require('./config/routes')(app);
 var port = process.env.PORT || 3000;
 var server = http.createServer(app).listen(port);
 
-// process.on('uncaughtException', function(err) {
-//   console.log('Unexpected exception: ' + err.message);
-//   console.log(err.stack);
-// });
+process.on('uncaughtException', function(err) {
+  console.log('Unexpected exception: ' + err.message);
+  console.log(err.stack);
+});
