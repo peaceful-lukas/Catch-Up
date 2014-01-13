@@ -20,7 +20,7 @@
   margin: 0 auto;
   width: 305px;
   height: 40px;
-  border-color: #dddddd;
+  border: 2px solid #dddddd;
   font-size: 20px;
 }
 
@@ -33,4 +33,339 @@
   padding-bottom: 15px;
   color: #ffffff;
   background-color: #dc1e26;
+}
+
+
+.upload {
+  position: relative;
+  border-bottom:2px solid #ddd;
+}
+
+.upload h3 {
+  color: #dc1e26;
+}
+
+.upload-cell {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.upload-cell label {
+  position: absolute;
+  top: 10px;
+  color: #000000;
+}
+
+.upload-cell input {
+  position: absolute;
+  margin-left: 60px;
+  border: 2px solid #dddddd;
+  height: 40px;
+}
+
+.upload-cell a.url-load {
+  position: absolute;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  right: 0;
+  width: 140px;
+  color: #ffffff;
+  background-color: #aaaaaa;
+  border: 2px solid #999999;
+}
+
+.upload-cell p.upload-message {
+  display: inline-block;
+}
+
+.upload-cell a.upload {
+  position: absolute;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  right: 0;
+  width: 140px;
+  color: #ffffff;
+  background-color: #dc1e26;
+}
+
+
+.upload-thumbnail-list-cell {
+  height: 130px;
+  margin-bottom: 30px;
+}
+
+.upload-thumbnail-list-cell ul.thumbnail-list {
+  position: relative;
+  top: 20px;
+  margin: 0 auto;
+  width: 640px;
+  list-style-type: none;
+  padding: 0;
+}
+
+.upload-thumbnail-list-cell ul.thumbnail-list li {
+  display: inline-block;
+  position: relative;
+  width: 140px;
+  height: 100px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.upload-thumbnail-list-cell ul.thumbnail-list li img.upload-thumb {
+  position: absolute;
+  width: 140px;
+  height: 100px;
+}
+
+.upload-thumbnail-list-cell ul.thumbnail-list li .thumb-selected {
+  position: relative;
+  width: 140px;
+  height: 100px;
+  content: '';
+  visibility: hidden;
+}
+
+.upload-thumbnail-list-cell ul.thumbnail-list li .thumb-selected .selected-bg {
+  position: absolute;
+  width: 140px;
+  height: 100px;
+  background-color: #dc1e26;
+  opacity: 0.3;
+}
+
+.upload-thumbnail-list-cell ul.thumbnail-list li .thumb-selected .selected-border {
+  position: absolute;
+  border: 3px solid #dc1e26;
+  width: 134px;
+  height: 94px;
+}
+
+.upload .after-url-load {
+  display: none;
+}
+
+
+
+
+
+
+.list {
+  position: relative;
+}
+
+.list ul.thumbnail-list {
+  position: relative;
+  list-style-type: none;
+  padding: 0;
+}
+
+.list ul.thumbnail-list li {
+  display: inline-block;
+  position: relative;
+  width: 225px;
+  height: 170px;
+}
+
+.list ul.thumbnail-list li img {
+  position: absolute;
+  left: 2px;
+  width: 222px;
+  height: 164px;
+}
+
+.list ul.thumbnail-list li .editable {
+  position: relative;
+  left: 2px;
+  width: 222px;
+  height: 164px;
+  visibility: hidden;
+}
+
+.list ul.thumbnail-list li .editable .editable-bg {
+  width: 100%;
+  height: 100%;
+  background-color: #dc1e26;
+  opacity: 0.3;
+}
+
+.list ul.thumbnail-list li .editable .editable-buttons {
+  position: relative;
+  top: -100%;
+  width: 100%;
+  height: 100%;
+}
+
+.list ul.thumbnail-list li .editable .editable-buttons a.edit {
+  position: absolute;
+  left: 40px;
+  top: 40px;
+  width: 140px;
+  height: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #ff0000;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.list ul.thumbnail-list li .editable .editable-buttons a.delete {
+  position: absolute;
+  left: 40px;
+  top: 85px;
+  width: 140px;
+  height: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #ffffff;
+  background-color: #dc1e26;
+  text-align: center;
+}
+
+
+
+#edit {
+  position: absolute;
+  width: 100%;
+  height: 400px;
+  display: none;
+  z-index: 2000;
+  background: #ffffff;
+}
+
+#edit .edit-container {
+  position: relative;
+  margin-left: 20px;
+  max-width: 860px;
+}
+
+#edit .edit-top {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #dddddd;
+}
+
+#edit .edit-top h3 {
+  position: absolute;
+  margin: 0;
+  top: 20px;
+  color: #dc1e26;
+}
+
+#edit .edit-top img.close {
+  position: absolute;
+  right: 0;
+  top: 20px;
+  content: url(/images/close.png);
+}
+
+
+
+.edit-cell {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.edit-cell label {
+  position: absolute;
+  top: 10px;
+  color: #000000;
+}
+
+.edit-cell input {
+  position: absolute;
+  margin-left: 60px;
+  border: 2px solid #dddddd;
+  height: 40px;
+}
+
+.edit-cell a.url-load {
+  position: absolute;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  right: 0;
+  width: 140px;
+  color: #ffffff;
+  background-color: #aaaaaa;
+  border: 2px solid #999999;
+}
+
+.edit-cell p.edit-message {
+  display: inline-block;
+}
+
+.edit-cell a.edit-ok {
+  position: absolute;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  right: 0;
+  width: 140px;
+  color: #ffffff;
+  background-color: #dc1e26;
+}
+
+
+.edit-thumbnail-list-cell {
+  height: 130px;
+  margin-bottom: 30px;
+}
+
+.edit-thumbnail-list-cell ul.thumbnail-list {
+  position: relative;
+  top: 20px;
+  margin: 0 auto;
+  width: 640px;
+  list-style-type: none;
+  padding: 0;
+}
+
+.edit-thumbnail-list-cell ul.thumbnail-list li {
+  display: inline-block;
+  position: relative;
+  width: 140px;
+  height: 100px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.edit-thumbnail-list-cell ul.thumbnail-list li img.edit-thumb {
+  position: absolute;
+  width: 140px;
+  height: 100px;
+}
+
+
+.edit-thumbnail-list-cell ul.thumbnail-list li .thumb-selected {
+  position: relative;
+  width: 140px;
+  height: 100px;
+  content: '';
+  visibility: hidden;
+}
+
+.edit-thumbnail-list-cell ul.thumbnail-list li .thumb-selected .selected-bg {
+  position: absolute;
+  width: 140px;
+  height: 100px;
+  background-color: #dc1e26;
+  opacity: 0.3;
+}
+
+.edit-thumbnail-list-cell ul.thumbnail-list li .thumb-selected .selected-border {
+  position: absolute;
+  border: 3px solid #dc1e26;
+  width: 134px;
+  height: 94px;
 }

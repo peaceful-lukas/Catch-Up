@@ -8,21 +8,56 @@ module.exports = {
   
   admin: function(req, res) {
     Video.load(function(videos) {
-      res.render('admin/admin.jade', { videoData: videos });
+      var templateData = {
+        videoData: videos
+      };
+      
+      res.render('admin/admin.jade', templateData);
     });
   },
   
-  ajax: function(req, res) {
-    var data = req.body;
-    
-    if( data && data.url && data.title && data.vid && data.thumbnail ) {
-      var video = new Video(data);
-      video.save();
+  upload: function(req, res) {
+    Video.load(function(videos) {
       
-      res.status(201).json({ success: true });
-    }
-    else {
-      res.status(400).json();
-    }
+      var templateData = {
+        videoData: videos
+      };
+      
+      // 업로드 성공
+      if( req.body && req.body.url && req.body.title && req.body.vid && req.body.thumbnail ) {
+        var video = new Video(req.body);
+        video.save();
+        
+        req.method = 'GET';
+        res.redirect('/admin');
+      }
+      
+      // 업로드 실패 : 발생 확률 거의 없음( 클라이언트에서 null 체크 다 함. )
+      else {
+        res.render('admin/error.jade', templateData);
+      }
+    });
+  },
+  
+  edit: function(req, res) {
+    Video.load(function(videos) {
+      if( req.body && req.body.url && req.body.title && req.body.vid && req.body.thumbnail ) {
+        Video.modify(req.body, function(video) {
+          req.method = 'GET';
+          res.redirect('/admin');
+        });
+      }
+      
+      // edit 실패 : 발생 확률 거의 없음( 클라이언트에서 null 체크 다 함. )
+      else {
+        res.render('admin/error.jade', templateData);
+      }
+    });
+  },
+  
+  discard: function(req, res) {
+    Video.discard(req.body.vid, function() {
+      res.status(200).json({ success: true });
+    });
   }
 }

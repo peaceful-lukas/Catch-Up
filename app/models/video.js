@@ -10,7 +10,6 @@ var VideoSchema = new Schema({
   title: { type: String, required: true },
   url: { type: String, required: true },
   thumbnail: { type: String, required: true },
-  order: { type: Number, default: 0 }
 });
 
 
@@ -26,6 +25,24 @@ VideoSchema.statics = {
         callback(videos);
       }
     });
+  },
+  
+  modify: function(video, callback) {
+    this.update({ vid: video.vid }, video, function(err, video) {
+      if(err) throw new Error(err.message);
+      else {
+        callback(video);
+      }
+    })
+  },
+  
+  discard: function(vid, callback) {
+    this.remove({ vid: vid }, function(err) {
+      if(err) throw new Error(err.message);
+      else {
+        callback();
+      }
+    })
   }
 }
 

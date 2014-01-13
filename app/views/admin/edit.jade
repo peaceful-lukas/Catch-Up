@@ -1,0 +1,47 @@
+#edit
+  .edit-top
+    .edit-container
+      h3 EDIT
+      img.close
+  
+  .edit-content
+    .edit-container
+      form(id='edit-uploadForm', action='/admin/edit', method='POST')
+          .edit-cell
+            label TITLE
+            input.title(type='text', name='title', id='edit-title', value='')
+            
+          .edit-cell
+            label URL
+            input.url(type='text', name='url', id='edit-url', value='')
+            a.url-load LOADING
+          
+          .edit-cell.edit-thumbnail-list-cell
+            ul.thumbnail-list
+              li
+                img.edit-thumb#edit-0(index='0')
+                .thumb-selected
+                  .selected-bg
+                  .selected-border
+              li
+                img.edit-thumb#edit-1(index='1')
+                .thumb-selected
+                  .selected-bg
+                  .selected-border
+              li
+                img.edit-thumb#edit-2(index='2')
+                .thumb-selected
+                  .selected-bg
+                  .selected-border
+              li
+                img.edit-thumb#edit-3(index='3')
+                .thumb-selected
+                  .selected-bg
+                  .selected-border
+            
+            input(type='hidden', name='vid', id='edit-vid', value='')
+            input(type='hidden', name='thumbnail', id='edit-thumbnail', value='')
+          
+          .edit-cell
+            p.edit-message 대표 프레임을 선택하시고 UPLOAD 버튼을 누르시면 영상이 업로드됩니다.
+            a.edit-ok OK

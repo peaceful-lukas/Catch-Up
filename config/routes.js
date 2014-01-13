@@ -15,7 +15,8 @@ module.exports = function(app) {
   app.get('/admin', auth, admin.admin);
   
   app.post('/admin/login', auth, admin.login);
-  app.post('/admin/ajax', auth, admin.ajax);
-  
+  app.post('/admin/upload', auth, admin.upload);
+  app.post('/admin/edit', auth, admin.edit);
+  app.post('/admin/discard', auth, admin.discard);
   
 }
