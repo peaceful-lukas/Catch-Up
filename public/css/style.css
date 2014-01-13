@@ -1,5 +1,15 @@
+@font-face {
+  font-family: 'NanumBarunGothic';
+  src: url('../fonts/NanumBarunGothic.ttf')  format('truetype')
+}
+
+@font-face {
+  font-family: 'Neo Sans Pro';
+  src: url('../fonts/Neo Sans Pro.ttf')  format('truetype')
+}
+
 * {
-  ;
+  font-family: 'NanumBarunGothic';
 }
 
 body {
