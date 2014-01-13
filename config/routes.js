@@ -13,6 +13,7 @@ module.exports = function(app) {
   
   // ADMIN
   app.get('/admin', auth, admin.admin);
+  app.get('/admin/logout', admin.logout);
   
   app.post('/admin/login', auth, admin.login);
   app.post('/admin/upload', auth, admin.upload);

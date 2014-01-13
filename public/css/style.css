@@ -72,6 +72,7 @@ header .menu {
 header .menu a {
   color:#444;
   text-decoration:none;
+  cursor:pointer;
 }
 
 header .menu a:first-child {
@@ -358,6 +359,15 @@ footer address {
   .popup .frame .top p { position:relative; top:355px; padding-left:137px; text-align:center;}
 }
 
+@media screen and (min-width:551px) and (max-width:850px){
+  .popup .frame iframe { height:350px;}
+  .popup img.before { top:440px;}
+  .popup img.before2 { top:438px; left:-3px;}
+  .popup img.after { top:440px;}
+  .popup img.after2 { top:438px; right:-3px;}
+  .popup .frame .top p { position:relative; top:355px; padding-left:137px; text-align:center;}
+}
+
 @media screen and (max-width:716px){
   .popup { top:30px;}
   .popup .frame { width:90%;}
@@ -402,7 +412,7 @@ footer address {
   .popup .top h2 { left:20px; top:20px;}
   .popup .top p { right:70px; top:20px;}
   .popup .top img.close, .popup .top img.close2  { right:25px; top:30px;}
-/*  .popup .frame iframe { height:451px; }*/
+  /*.popup .frame iframe { height:451px; }*/
   
 /*  .popup  img.before { float:left; top:540px;}
   .popup  img.before2 { float:left; top:537px; left:-3px; }
@@ -410,7 +420,6 @@ footer address {
   .popup  img.after2 { float:right; top:537px; right:-3px;}
   .popup .frame .top p { position:relative; top:565px; padding-left:135px; text-align:center;}*/
 }
-
 
 
 

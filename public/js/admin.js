@@ -1,6 +1,26 @@
 
 $(document).ready(function() {
   
+  // 헤더
+  $('img.homepage').click(function() {
+    window.location = '/intro';
+  })
+  
+  $('img.logout').click(function() {
+    if( confirm('정말 로그아웃 하시겠습니까?') ) {
+      $.ajax({
+        type: 'GET',
+        url: '/admin/logout',
+        success: function(result) {
+          window.location = '/admin';
+        },
+        error: function(result) {
+          alert('서버 에러입니다. 관리자에게 연락바랍니다.');
+        }
+      })
+    }
+  });
+  
   // GLOBAL VARIABLES
   var YOUTUBE_THUMBNAIL_URL_PREFIX = null;
   var YOUTUBE_THUMBNAIL_URL_LIST = [];
@@ -160,7 +180,7 @@ $(document).ready(function() {
           window.location = '/admin';
         },
         error: function(result) {
-          alert('서버에러입니다. 동영상 삭제에 실패했습니다.');
+          alert('서버에러입니다. 동영상 삭제에 실패했습니다. 관리자에게 연락바랍니다.');
         }
       });
     }
