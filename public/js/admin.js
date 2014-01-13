@@ -2,11 +2,11 @@
 $(document).ready(function() {
   
   // 헤더
-  $('img.homepage').click(function() {
+  $('img.homepage-over').click(function() {
     window.location = '/intro';
   })
   
-  $('img.logout').click(function() {
+  $('img.logout-over').click(function() {
     if( confirm('정말 로그아웃 하시겠습니까?') ) {
       $.ajax({
         type: 'GET',
