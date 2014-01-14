@@ -25,8 +25,8 @@ body {
 /* Header CSS */
 #header-container {
   position: relative;
-  height: 100px;
-  border-bottom:2px solid #ddd;
+  height: 103px;
+  background:url(../images/bg/bg_shadow.png) repeat;
 }
 
 .container {
@@ -339,7 +339,7 @@ section .content3 p + p + p {
 /* Footer CSS */
 #footer-container {
   position: relative;
-  border-top:2px solid #ddd;
+  border-top:1px solid #ddd;
 }
 
 footer {
@@ -347,17 +347,22 @@ footer {
   top:-3px;
   margin:0 auto;
   height:90px;
-  font-size:14px;
+  font-family: 'Neo Sans Pro';
+  font-weight:bold;
+  color:#444444;
 }
 
 footer small {
   position:absolute;
   top:20px;
+  font-size:14px;
 }
 
 footer address {
   position:absolute;
-  top:49px;
+  top:48px;
+  font-size:12px;
+  font-style:normal;
 }
 
 @media screen and (min-width:320px) and (max-width:550px){
@@ -405,7 +410,7 @@ footer address {
 
 
 @media screen and (max-width:500px){
-  #header-container { height: 10%; }
+  #header-container { height: 10%; background-position-y:60px;}
   header h1 { padding:0;}
   header .skip, header .skip_red { top:0px;}
   header .menu { top:12px; font-size:12px;} 
