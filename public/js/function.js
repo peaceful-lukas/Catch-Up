@@ -44,6 +44,7 @@ $(document).ready(function(){
   $('.close2').click(function(){
     $('.blurred').hide();
     $('.popup').hide();
+    $('iframe.youtube_player').attr('src', '');
   });
   
   
