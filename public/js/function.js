@@ -12,15 +12,17 @@ $(document).ready(function(){
   })
   
   var vidURLs = [];
+  var vidTitles = [];
   
   var $videoInfo = $('li.video-info') || [];
   for(var i=0; i<$videoInfo.length; i++) {
     var videoId = $($videoInfo[i]).attr('vid');
     var youtubeUrl = 'http://www.youtube.com/embed/' + videoId + '?showinfo=0';
     vidURLs.push(youtubeUrl);
+    
+    var videoTitle = $($videoInfo[i]).attr('title')
+    vidTitles.push(videoTitle);
   }
-  
-  console.log(vidURLs);
   
   
   $('.youtubeplayer_total').text(vidURLs.length);
@@ -32,12 +34,17 @@ $(document).ready(function(){
     $('.popup').attr('data-nth',nth);
     $('.youtube_player').attr('src', vidURLs[nth-1]);
     $('.youtubeplayer_nth').text(nth);
+    
+    // 타이틀 변경
+    var title = $(this).parent().attr('title');
+    $('h2.title').html(title);
   });
   
   
   $('.close2').click(function(){
     $('.blurred').hide();
     $('.popup').hide();
+    $('iframe.youtube_player').attr('src', '');
   });
   
   
@@ -53,6 +60,9 @@ $(document).ready(function(){
     $('.popup').attr('data-nth', nth);
     $('.youtubeplayer_nth').text(nth);
     $('.youtube_player').attr('src', vidURLs[nth-1]);
+    
+    // 타이틀 변경
+    $('h2.title').html( vidTitles[nth-1] );
   });
   
   
@@ -69,6 +79,9 @@ $(document).ready(function(){
     $('.popup').attr('data-nth', nth);
     $('.youtubeplayer_nth').text(nth);
     $('.youtube_player').attr('src', vidURLs[nth-1]);
+    
+    // 타이틀 변경
+    $('h2.title').html( vidTitles[nth-1] );
   });
   
 });

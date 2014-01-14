@@ -58,7 +58,7 @@ block content
         - videoData.forEach(function(video) {
           li
             img(src='#{video.thumbnail}')
-            .editable(vid='#{video.vid}', title='#{video.title}', url='#{video.url}', thumbnail='#{video.thumbnail}')
+            .editable(mid='#{video._id}', vid='#{video.vid}', title='#{video.title}', url='#{video.url}', thumbnail='#{video.thumbnail}')
               .editable-bg
               .editable-buttons
                 a.edit EDIT

@@ -129,11 +129,13 @@ $(document).ready(function() {
   // 관리자 페이지 - LIST
   $('.list a.edit').click(function() {
     var $editable = $(this).parent().parent();
+    var mid = $editable.attr('mid');
     var title = $editable.attr('title');
     var url = $editable.attr('url');
     var vid = $editable.attr('vid');
     var thumbnail = $editable.attr('thumbnail');
     
+    $('#edit-mid').val(mid);
     $('#edit-title').val(title);
     $('#edit-url').val(url);
     $('#edit-vid').val(vid);
