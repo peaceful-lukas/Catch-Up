@@ -380,14 +380,13 @@ footer address {
   .popup img.before2 { top:438px; left:-3px;}
   .popup img.after { top:440px;}
   .popup img.after2 { top:438px; right:-3px;}
-  .popup .frame .top p { position:relative; top:355px; padding-left:137px; text-align:center;}
+  .popup .frame .top p { position:relative; top:468px; padding-left:137px; text-align:center;}
 }
 
 @media screen and (max-width:716px){
-  .popup { top:30px;}
+  .popup { top:-35px;}
   .popup .frame { width:90%;}
 }
-
 
 @media screen and (max-width:768px){
   header h1 { margin-left:5%;}
