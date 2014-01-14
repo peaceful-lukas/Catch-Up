@@ -6,11 +6,18 @@
       img(class='skip_red' src='/images/btn/btn_skip2.png' alt='SKIP 버튼')
     - }
     
-    - else if( pageInfo === 'main' || pageInfo === 'about' ) {
+    - else if( pageInfo === 'main' ) {
+      h1: img(src='/images/tit/tit_logo.png' alt='Catch-Up 로고')
+      span(class='menu')
+        a(class='works' style='color:#dc1e26;') WORKS
+        a(class='about') ABOUT
+    - }
+
+    - else if( pageInfo === 'about' ) {
       h1: img(src='/images/tit/tit_logo.png' alt='Catch-Up 로고')
       span(class='menu')
         a(class='works') WORKS
-        a(class='about') ABOUT
+        a(class='about' style='color:#dc1e26;') ABOUT
     - }
     
     - else if( pageInfo === 'login' ) {
