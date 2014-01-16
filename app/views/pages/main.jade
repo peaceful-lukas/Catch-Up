@@ -8,7 +8,8 @@ block content
           - videoData.forEach(function(video, index) {
             li.video-info(title='#{video.title}', url='#{video.url}', vid='#{video.vid}')
               img(class="bu_blind" src="images/bu/bu_blind.png" alt='' data-nth='#{index+1}')
-              img(class="content" src='#{video.thumbnail}')  
+              //- img(class="content" src='#{video.thumbnail}')
+              .content(style='background: url(#{video.thumbnail}) no-repeat center; background-size:100% 250px;')
           - });
 
     .blurred
