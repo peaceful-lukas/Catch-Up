@@ -5,20 +5,11 @@
  
 var http = require('http');
 var express = require('express');
-var fs     = require('fs');
-var mongoose = require('mongoose');
 var env    = process.env.NODE_ENV || 'development';
 var config   = require('./config/config')[env];
 
-// Bootstrap db connection
-var db = mongoose.connection;
-mongoose.connect(config.db.host);
-
-// Botstrap models
-var MODEL_PATH = __dirname + '/app/models';
-fs.readdirSync(MODEL_PATH).forEach(function (file) {
-    if( ~file.indexOf('.js') ) require(MODEL_PATH + '/' + file);
-});
+// SQLite3 initialize
+require('./app/models/video').init();
 
 // express setting
 var app = express();

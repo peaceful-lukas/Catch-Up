@@ -1,11 +1,13 @@
 @font-face {
   font-family: 'NanumBarunGothic';
-  src: url('../fonts/NanumBarunGothic.ttf')  format('truetype')
+  src: url('../fonts/NanumBarunGothic.ttf')  format('truetype');
+  src: url('../fonts/NanumBarunGothic.eof')
 }
 
 @font-face {
   font-family: 'Neo Sans Pro';
-  src: url('../fonts/Neo Sans Pro.ttf')  format('truetype')
+  src: url('../fonts/Neo Sans Pro.ttf')  format('truetype');
+  src: url('../fonts/Neo Sans Pro.eof');
 }
 
 * {

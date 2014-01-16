@@ -172,12 +172,12 @@ $(document).ready(function() {
     
     if( confirm('정말 삭제하시겠습니까?') ) {
       var $editable = $(this).parent().parent();
-      var vid = $editable.attr('vid');
+      var mid = $editable.attr('mid');
       
       $.ajax({
         type: 'POST',
         url: '/admin/discard',
-        data: { vid: vid },
+        data: { _id: mid },
         success: function(result) {
           window.location = '/admin';
         },
