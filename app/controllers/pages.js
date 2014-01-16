@@ -1,4 +1,4 @@
-var Video = require('mongoose').model('Video');
+var videoDB = require('../models/video');
 
 module.exports = {
   intro: function(req, res) {
@@ -10,7 +10,7 @@ module.exports = {
   },
   
   main: function(req, res) {
-    Video.load(function(videos) {
+    videoDB.load(function(videos) {
       var templateData = {
         pageInfo: 'main',
         videoData: videos

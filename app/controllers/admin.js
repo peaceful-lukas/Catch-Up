@@ -1,4 +1,4 @@
-var Video = require('mongoose').model('Video');
+var videoDB = require('../models/video');
 
 module.exports = {
   login: function(req, res) {
@@ -12,7 +12,7 @@ module.exports = {
   },
   
   admin: function(req, res) {
-    Video.load(function(videos) {
+    videoDB.load(function(videos) {
       var templateData = {
         pageInfo: 'admin',
         videoData: videos
@@ -23,33 +23,24 @@ module.exports = {
   },
   
   upload: function(req, res) {
-    Video.load(function(videos) {
-      
-      var templateData = {
-        pageInfo: 'admin',
-        videoData: videos
-      };
-      
-      // 업로드 성공
-      if( req.body && req.body.url && req.body.title && req.body.vid && req.body.thumbnail ) {
-        var video = new Video(req.body);
-        video.save();
-        
+    // 업로드 성공
+    if( req.body && req.body.url && req.body.title && req.body.vid && req.body.thumbnail ) {
+      videoDB.save(req.body, function() {
         req.method = 'GET';
         res.redirect('/admin');
-      }
-      
-      // 업로드 실패 : 발생 확률 거의 없음( 클라이언트에서 null 체크 다 함. )
-      else {
-        res.render('admin/error.jade', templateData);
-      }
-    });
+      });
+    }
+    
+    // 업로드 실패 : 발생 확률 거의 없음( 클라이언트에서 null 체크 다 함. )
+    else {
+      error(req, res);
+    }
   },
   
   edit: function(req, res) {
-    Video.load(function(videos) {
+    videoDB.load(function(videos) {
       if( req.body && req.body.url && req.body.title && req.body.vid && req.body.thumbnail ) {
-        Video.modify(req.body, function(video) {
+        videoDB.modify(req.body, function(video) {
           req.method = 'GET';
           res.redirect('/admin');
         });
@@ -67,8 +58,19 @@ module.exports = {
   },
   
   discard: function(req, res) {
-    Video.discard(req.body.vid, function() {
+    videoDB.discard(req.body._id, function() {
       res.status(200).json({ success: true });
     });
   }
+}
+
+function error(req, res) {
+  videoDB.load(function(videos) {
+      var templateData = {
+        pageInfo: 'admin',
+        videoData: videos
+      };
+      
+      res.render('admin/error.jade', templateData);      
+    });
 }
