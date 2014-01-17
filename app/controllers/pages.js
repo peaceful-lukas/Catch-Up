@@ -1,12 +1,16 @@
 var videoDB = require('../models/video');
+var showreelDB = require('../models/showreel');
 
 module.exports = {
   intro: function(req, res) {
-    var templateData = {
-      pageInfo: 'intro'
-    };
-    
-    res.render('pages/index.jade', templateData);
+    showreelDB.load(function(showreel) {
+      var templateData = {
+        pageInfo: 'intro',
+        showreel: showreel
+      };
+      
+      res.render('pages/index.jade', templateData);
+    });
   },
   
   main: function(req, res) {
