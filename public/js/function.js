@@ -30,6 +30,10 @@ $(document).ready(function(){
   $('.bu_blind').click(function(){
     $('.blurred').show();
     $('.popup').show();
+
+    var windowWidth = $(window).width();
+    var windowHeight = $(window).height();
+    $('.frame').css({top:windowHeight/2,left:windowWidth/2,margin:'-'+($('.frame').height() / 2)+'px 0 0 -'+($('.frame').width() / 2)+'px'});
     var nth = this.getAttribute('data-nth');
     $('.popup').attr('data-nth',nth);
     $('.youtube_player').attr('src', vidURLs[nth-1]);
