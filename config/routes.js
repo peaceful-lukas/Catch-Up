@@ -23,4 +23,5 @@ module.exports = function(app) {
   app.post('/admin/edit', middlewares, admin.edit);
   app.post('/admin/discard', middlewares, admin.discard);
   
+  app.post('/admin/edit/showreel', middlewares, admin.showreelEdit);
 }

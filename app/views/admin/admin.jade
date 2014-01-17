@@ -50,6 +50,15 @@ block content
           .upload-cell
             p.upload-message 대표 프레임을 선택하시고 UPLOAD 버튼을 누르시면 영상이 업로드됩니다.
             a.upload UPLOAD
+    
+    .show-reel
+      h3 SHOW REEL
+      
+      .show-reel-panel
+        img(src='#{showreel.thumbnail}')
+        .editable(mid='#{showreel._id}', vid='#{showreel.vid}', title='#{showreel.title}', url='#{showreel.url}', thumbnail='#{showreel.thumbnail}')
+          .editable-bg
+          a.edit EDIT
         
     .list
       h3 LIST

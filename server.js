@@ -10,6 +10,7 @@ var config   = require('./config/config')[env];
 
 // SQLite3 initialize
 require('./app/models/video').init();
+require('./app/models/showreel').init();
 
 // express setting
 var app = express();

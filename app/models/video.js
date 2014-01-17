@@ -1,7 +1,7 @@
 var sqlite3 = require('sqlite3').verbose();
 var fs     = require('fs');
 
-var file = 'video.db';
+var file = 'db/video.db';
 var db = new sqlite3.Database(file);
 
 module.exports = {
@@ -12,7 +12,7 @@ module.exports = {
     db.serialize(function() {
       if( !exists ) {
         db.run('CREATE TABLE video ( _id INTEGER PRIMARY KEY AUTOINCREMENT, youtubeVideoId TEXT, title TEXT, url TEXT, thumbnail TEXT )');
-        console.log('db created!');
+        console.log('video db created!');
       }
       else {
         
