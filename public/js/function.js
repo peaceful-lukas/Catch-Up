@@ -1,4 +1,42 @@
+var player;
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('player', {
+    height: '390',
+    width: '640',
+    videoId: $('#player').attr('vid'),
+    events: {
+      'onReady': onPlayerReady,
+      'onStateChange': onPlayerStateChange
+    }
+  });
+}
+
+// autoplay video
+function onPlayerReady(event) {
+  event.target.playVideo();
+}
+
+// when video ends
+function onPlayerStateChange(event) {        
+  if(event.data === 0) {            
+    window.location = '/'
+  };
+}
+
+
 $(document).ready(function(){
+
+  // var youtubeEmbedUrl = 'http://www.youtube.com/embed/' + $('.intro').attr('vid')+'?&autoplay=1&autohide=1';
+  // $('.intro').attr('src', youtubeEmbedUrl);
+
+  console.log($('#player').attr('vid'));
+
+  
+  
+
+
+
+
   $('.skip_red').click(function(){
     window.location = '/';
   })

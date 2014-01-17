@@ -1,8 +1,11 @@
 extends ../layout
 
 block content
-  .container
+  .page-intro
     section
       article
-        .bg
-          img(class='intro' src='#{showreel.thumbnail}' alt='' width='100%' height='710px')
+        //- iframe(id='intro' class='intro' vid='#{showreel.vid}' alt='' type='application/x-shockwave-falsh' frameborder='0')    
+        #player(class='intro' vid='#{showreel.vid}') 
+        .white-wrapper-left
+        .white-wrapper-right
+        
