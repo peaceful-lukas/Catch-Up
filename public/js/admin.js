@@ -1,6 +1,8 @@
 
 $(document).ready(function() {
   
+  var editType = '';
+  
   // 헤더
   $('img.homepage-over').click(function() {
     window.location = '/intro';
@@ -38,6 +40,15 @@ $(document).ready(function() {
   // 관리자 화면 UI 컨트롤.
   $('.upload input.title').css('width', 900 - 64);
   $('.upload input.url').css('width', 900 - 64 - 160);
+  
+  $('.show-reel .show-reel-panel')
+  .mouseenter(function() {
+    $(this).children('.editable').css('visibility', 'visible');
+  })
+  .mouseleave(function() {
+    $(this).children('.editable').css('visibility', 'hidden');
+  });
+  
   $('.list > ul.thumbnail-list > li')
   .mouseenter(function() {
     $(this).children('.editable').css('visibility', 'visible');
@@ -124,6 +135,47 @@ $(document).ready(function() {
   });
   
   
+  // 관리자 페이지 - SHOW REEL
+  $('.show-reel a.edit').click(function() {
+    var $editable = $(this).parent();
+    var mid = $editable.attr('mid');
+    var title = $editable.attr('title');
+    var url = $editable.attr('url');
+    var vid = $editable.attr('vid');
+    var thumbnail = $editable.attr('thumbnail');
+    
+    $('#edit-mid').val(mid);
+    $('#edit-title').val(title);
+    $('#edit-url').val(url);
+    $('#edit-vid').val(vid);
+    $('#edit-thumbnail').val(thumbnail);
+    
+    EDIT_YOUTUBE_THUMBNAIL_URL_PREFIX = 'http://img.youtube.com/vi/' + vid + '/';
+    
+    EDIT_YOUTUBE_THUMBNAIL_URL_LIST = [];
+    EDIT_YOUTUBE_THUMBNAIL_URL_LIST.push(EDIT_YOUTUBE_THUMBNAIL_URL_PREFIX + '0.jpg');
+    EDIT_YOUTUBE_THUMBNAIL_URL_LIST.push(EDIT_YOUTUBE_THUMBNAIL_URL_PREFIX + '1.jpg');
+    EDIT_YOUTUBE_THUMBNAIL_URL_LIST.push(EDIT_YOUTUBE_THUMBNAIL_URL_PREFIX + '2.jpg');
+    EDIT_YOUTUBE_THUMBNAIL_URL_LIST.push(EDIT_YOUTUBE_THUMBNAIL_URL_PREFIX + '3.jpg');
+    
+    // 썸네일 이미지 4개 표시.
+    $('#edit-0').attr('src', EDIT_YOUTUBE_THUMBNAIL_URL_LIST[0]);
+    $('#edit-1').attr('src', EDIT_YOUTUBE_THUMBNAIL_URL_LIST[1]);
+    $('#edit-2').attr('src', EDIT_YOUTUBE_THUMBNAIL_URL_LIST[2]);
+    $('#edit-3').attr('src', EDIT_YOUTUBE_THUMBNAIL_URL_LIST[3]);
+    
+    // 썸네일 선택 표시 초기화.
+    $('#edit ul.thumbnail-list > li > .thumb-selected').css('visibility', 'hidden');
+    
+    // 지정된 썸네일 선택 표시.
+    var index = thumbnail.substring(thumbnail.length-5, thumbnail.length-4);
+    $('#edit ul.thumbnail-list > li:eq(' + index + ') > .thumb-selected').css('visibility', 'visible');
+    
+    $('.blurred').css('display', 'block');
+    $('#edit').css('display', 'block');
+    
+    editType = 'showreel';
+  });
   
   
   // 관리자 페이지 - LIST
@@ -165,6 +217,8 @@ $(document).ready(function() {
     
     $('.blurred').css('display', 'block');
     $('#edit').css('display', 'block');
+    
+    editType = 'video';
   });
   
   
@@ -260,6 +314,12 @@ $(document).ready(function() {
       alert('동영상 대표 이미지(썸네일)를 선택해주세요.')
     }
     else {
+      if( editType === 'video') {
+        $('#edit-uploadForm').attr('action', '/admin/edit');
+      }
+      else if( editType === 'showreel' ) {
+        $('#edit-uploadForm').attr('action', '/admin/edit/showreel');
+      }
       $('#edit-uploadForm').submit();
       $('.blurred').css('display', 'none');
       $('#edit').css('display', 'none');
