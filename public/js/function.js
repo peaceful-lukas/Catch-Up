@@ -30,7 +30,6 @@ $(document).ready(function(){
   // $('.intro').attr('src', youtubeEmbedUrl);
 
   console.log($('#player').attr('vid'));
-  
 //   $(".before").on({
 //     touchstart : function(){
 //       $(this).find("img").addClass("before2")
@@ -70,7 +69,7 @@ $(document).ready(function(){
   $('.bu_blind').click(function(){
     $('.blurred').show();
     $('.popup').show();
-   
+
     // $(window).resize(function(){
     //   var width = $(window).width();
     //   $('.frame').width(width-100);
