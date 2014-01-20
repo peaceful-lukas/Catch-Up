@@ -1,41 +1,58 @@
-var player;
-function onYouTubeIframeAPIReady() {
-  player = new YT.Player('player', {
-    height: '390',
-    width: '640',
-    videoId: $('#player').attr('vid'),
-    events: {
-      'onReady': onPlayerReady,
-      'onStateChange': onPlayerStateChange
-    }
-  });
+
+
+
+var params = { allowScriptAccess: 'always', autoplay: 1 };
+var atts = { id: 'myytplayer', class: 'intro' };
+var vid = 'yjQG-vq8Q7I';
+
+swfobject.embedSWF('http://www.youtube.com/v/' + vid + '?enablejsapi=1&playerapiid=ytplayer&version=3', 'player', '425', '356', '8', null, null, params, atts);
+
+
+function onYouTubePlayerReady(playerId) {
+  ytplayer = document.getElementById("myytplayer");
+  ytplayer.playVideo();
 }
 
-// autoplay video
-function onPlayerReady(event) {
-  event.target.playVideo();
-}
-
-// when video ends
-function onPlayerStateChange(event) {        
-  if(event.data === 0) {            
-    window.location = '/'
-  };
+function onytplayerStateChange(newState) {
+  if(newState === 0) {
+    window.location = '/';
+  }
 }
 
 
-$(document).ready(function(){
+//  var tag = document.createElement('script');
+//  tag.src = "//www.youtube.com/iframe_api";
+//  var firstScriptTag = document.getElementsByTagName('script')[0];
+//  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+ 
 
-  // var youtubeEmbedUrl = 'http://www.youtube.com/embed/' + $('.intro').attr('vid')+'?&autoplay=1&autohide=1';
-  // $('.intro').attr('src', youtubeEmbedUrl);
+// var player;
+// function onYouTubeIframeAPIReady() {
+//   player = new YT.Player('player', {
+//     height: '390',
+//     width: '640',
+//     videoId: $('#player').attr('vid'),
+//     events: {
+//       'onReady': onPlayerReady,
+//       'onStateChange': onPlayerStateChange
+//     }
+//   });
+// }
 
-  console.log($('#player').attr('vid'));
+// // autoplay video
+// function onPlayerReady(event) {
+//   event.target.playVideo();
+// }
 
-  
-  
+// // when video ends
+// function onPlayerStateChange(event) {        
+//   if(event.data === 0) {            
+//     window.location = '/'
+//   };
+// }
 
 
-
+$(document).ready(function() {
 
   $('.skip_red').click(function(){
     window.location = '/';

@@ -1,13 +1,13 @@
 @font-face {
   font-family: 'NanumBarunGothic';
   src: url('../fonts/NanumBarunGothic.ttf')  format('truetype');
-  src: url('../fonts/NanumBarunGothic.eof')
+  src: url('../fonts/NanumBarunGothic.eot')
 }
 
 @font-face {
   font-family: 'Neo Sans Pro';
   src: url('../fonts/Neo Sans Pro.ttf')  format('truetype');
-  src: url('../fonts/Neo Sans Pro.eof');
+  src: url('../fonts/Neo Sans Pro.eot');
 }
 
 * {
@@ -104,7 +104,7 @@ header .menu a:hover {
   overflow: hidden;
 }
 
-.page-intro section article iframe.intro {
+.page-intro section article .intro {
   position: relative;
   top: -140px;
   width:100%;
