@@ -30,13 +30,15 @@ $(document).ready(function(){
   // $('.intro').attr('src', youtubeEmbedUrl);
 
   console.log($('#player').attr('vid'));
-
   
-  
-
-
-
-
+//   $(".before").on({
+//     touchstart : function(){
+//       $(this).find("img").addClass("before2")
+//     },
+//     touchend : function(){
+//       $(this).find("img").removeClass().addClass("before");
+//     }
+// });
   $('.skip_red').click(function(){
     window.location = '/';
   })
@@ -68,10 +70,32 @@ $(document).ready(function(){
   $('.bu_blind').click(function(){
     $('.blurred').show();
     $('.popup').show();
+   
+    // $(window).resize(function(){
+    //   var width = $(window).width();
+    //   $('.frame').width(width-100);
+    //   $('.frame').width(height-100);
+    // });
 
-    var windowWidth = $(window).width();
-    var windowHeight = $(window).height();
-    $('.frame').css({top:windowHeight/2,left:windowWidth/2,margin:'-'+($('.frame').height() / 2)+'px 0 0 -'+($('.frame').width() / 2)+'px'});
+    $(function() {
+      $(window).on('resize', function resize()  {
+        $(window).off('resize', resize);
+        setTimeout(function () {
+          // ifrmae position & size
+          var frame = $('.frame');
+          var top = (window.innerHeight - frame.height()) / 2;
+          var width = $(window).width();
+          var height = $(window).height();
+          $('.frame').width(width-100);
+          $('iframe').height(height/2);
+          frame.css('top', Math.max(0, top) + 'px');
+          $(window).on('resize', resize);
+        }, 50);
+      }).resize();
+    });
+    // var windowWidth = $(window).width();
+    // var windowHeight = $(window).height();
+    // $('.frame').css({top:windowHeight/2,left:windowWidth/2,margin:'-'+($('.frame').height() / 2)+'px 0 0 -'+($('.frame').width() / 2)+'px'});
     var nth = this.getAttribute('data-nth');
     $('.popup').attr('data-nth',nth);
     $('.youtube_player').attr('src', vidURLs[nth-1]);
