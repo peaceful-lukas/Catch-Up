@@ -514,7 +514,7 @@ footer address {
 
 
 @media screen and (min-width:320px) and (max-width:479px){
-  section article ul { margin:4px 3px 15px -35px;}
+  section article ul { margin:4px 3px 80px -35px;}
   /*.popup .frame { position:fixed; top:0; left:0; right:0; margin-top:-50px;}*/
 }
 
@@ -547,7 +547,7 @@ footer address {
 
 
 @media screen and (min-width:480px) and (max-width:768px){
-  section article ul { margin:4px 1px 15px -28px;}
+  section article ul { margin:4px 1px 80px -28px;}
 }
 
 
