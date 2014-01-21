@@ -7,7 +7,7 @@ module.exports = {
     
     if( agent.Mobile === true ) {
       var templateData = {
-        pageInfo: 'admin'
+        pageInfo: 'login'
       };
       
       res.render('admin/mobileGuide.jade', templateData);
