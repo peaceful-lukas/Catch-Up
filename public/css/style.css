@@ -211,9 +211,9 @@ section article ul li .bu_blind:hover {
   opacity:1;
 }
 
-.popup img.before:hover {
+/*.popup img.before:hover {
   opacity:0;
-}
+}*/
 
 
 
@@ -230,7 +230,6 @@ section article ul li .bu_blind:hover {
   opacity:1;
 }
 
-
 .popup img.after {
   position:absolute;
   top:50%;
@@ -239,9 +238,9 @@ section article ul li .bu_blind:hover {
   opacity:1;
 }
 
-.popup img.after:hover {
+/*.popup img.after:hover {
   opacity:0;
-}
+}*/
 
 .popup img.after2 {
   position:absolute;
@@ -496,7 +495,7 @@ footer address {
   .popup img.before2 { top:388px; left:-3px;}
   .popup img.after { top:390px;}
   .popup img.after2 { top:388px; right:-3px;}
-  .popup .frame p { position:absolute; top:100%; left:43%;}
+  .popup .frame p { position:absolute; top:101%; left:45%;}
 }
 
 @media screen and (max-width:500px){
