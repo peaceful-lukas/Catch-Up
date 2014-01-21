@@ -529,7 +529,7 @@ footer address {
   .popup img.before2 { top:388px; left:-3px;}
   .popup img.after { top:390px;}
   .popup img.after2 { top:388px; right:-3px;}
-  .popup .frame p { position:absolute; top:101%; left:45%;}
+  .popup .frame p { position:absolute; top:101%; left:41%;}
 }
 
 @media screen and (max-width:500px){
