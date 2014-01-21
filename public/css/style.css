@@ -54,13 +54,13 @@ header {
 }
 
 header h1 {
-  padding:20px 0 0 0;
+  padding:10px 0 0 0;
 }
 
 header .skip {
   position:absolute;
   right:0;
-  top:0;
+  top:-9px;
   cursor:pointer;
 }
 
@@ -71,7 +71,7 @@ header .skip:hover {
 header .skip_red {
   position:absolute;
   right:0;
-  top:0;
+  top:-9px;
   cursor:pointer;
   opacity:0;
 }
@@ -150,8 +150,13 @@ header .menu a:hover {
 section article {
   position:relative;
 }
+
+section .upline {
+  position:relative;
+  top:-4px;
+}
 section article ul {
-  margin:4px 0 15px -38px;
+  margin:1px 0 80px -38px;
   list-style-type:none;
 }
 
@@ -394,6 +399,7 @@ section .content3 p + p + p {
 /* Footer CSS */
 #footer-container {
   position: relative;
+  top:-4px;
   border-top:1px solid #ddd;
 }
 
@@ -410,14 +416,16 @@ footer {
 footer small {
   position:absolute;
   top:20px;
-  font-size:13px;
+  font-size:12px;
+  color:#666;
 }
 
 footer address {
   position:absolute;
-  top:48px;
-  font-size:11px;
+  top:44px;
+  font-size:10px;
   font-style:normal;
+  color:#999;
 }
 
 
@@ -523,7 +531,7 @@ footer address {
 
 @media screen and (max-width:500px){
   #header-container { height: 61px; background-position-y:60px;}
-  header h1 { padding:0;}
+  header h1 { position:relative; top:-5px; padding:0 0 0 0; }
   header .skip, header .skip_red { top:0px;}
   header .menu { top:12px; font-size:12px;} 
   section .content1 img { width:50%;}
@@ -558,7 +566,7 @@ footer address {
   header h1 { margin-left:5%;}
   header .skip, header .skip_red { margin-right:5%;}
   header h1 img { width:30%;}
-  header .skip, header .skip_red { width:10%; top:0px;}
+  header .skip, header .skip_red { width:10%; top:-8px;}
   header .menu { margin-right:2%; font-size:;}
   section article .intro { margin:15% 0; height:25%;}
   
@@ -570,14 +578,33 @@ footer address {
 
 
   footer small, footer address { margin:0 5%; font-size:12px;}
-  }
+}
+
+@media screen and (max-width:640px){
+  header .skip, header .skip_red { top:0px;}
+}
 
 @media screen and (max-width:500px){
-  header .skip, header .skip_red { top:-15px;}
+  header h1.intro_logo { position:relative; top:-10px; padding:0 0 0 0;}
+  header .skip, header .skip_red { top:-17px;}
 }
 
 @media screen and (max-width:450px){
-  header .skip, header .skip_red { top:-5px;}
+  header h1.intro_logo { padding:0px 0 0 0;}
+  header .skip, header .skip_red { top:-15px;}
+}
+
+@media screen and (max-width:400px){
+  header .skip, header .skip_red { top:-10px;}
+}
+
+@media screen and (max-width:380px){
+  header .skip, header .skip_red { top:-12px;}
+}
+
+@media screen and (max-width:350px){
+  header h1.intro_logo { position:relative; top:-10px; padding:0px 0 0 0;}
+  header .skip, header .skip_red { top:-7px;}
 }
 
 @media screen and (max-width:850px){
@@ -599,4 +626,6 @@ footer address {
 @media screen and (min-height:641px){
   /*.popup .frame .top p { position:fixed; top:80%; left:-59px;} */
 }
+
+
 
