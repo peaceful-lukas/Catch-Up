@@ -64,6 +64,36 @@ $(document).ready(function() {
 //       $(this).find("img").removeClass().addClass("before");
 //     }
 // });
+  $('.before2').mouseenter(function(){
+    $('.before').hide();
+  })
+  $('.before2').mouseleave(function(){
+    $('.before').show();
+  })
+
+  $('.before2').click(function(){
+    $('.before2').hide();
+    $('.before').show();
+    $('.before').mouseenter(function(){
+      $('.before2').show();
+    })
+  })
+
+  $('.after2').mouseenter(function(){
+    $('.after').hide();
+  })
+  $('.after2').mouseleave(function(){
+    $('.after').show();
+  })
+
+  $('.after2').click(function(){
+    $('.after2').hide();
+    $('.after').show();
+    $('.after').mouseenter(function(){
+      $('.after2').show();
+    })
+  })
+
 
   $('.skip_red').click(function(){
     window.location = '/';
@@ -96,13 +126,14 @@ $(document).ready(function() {
   $('.bu_blind').click(function(){
     $('.blurred').show();
     $('.popup').show();
-   
+    
+
     // $(window).resize(function(){
     //   var width = $(window).width();
     //   $('.frame').width(width-100);
     //   $('.frame').width(height-100);
     // });
-
+    
     $(function() {
       $(window).on('resize', function resize()  {
         $(window).off('resize', resize);
@@ -156,6 +187,8 @@ $(document).ready(function() {
     // 타이틀 변경
     $('h2.title').html( vidTitles[nth-1] );
   });
+
+
   
   
   $('.after2').click(function(){
