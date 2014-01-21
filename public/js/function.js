@@ -1,60 +1,61 @@
 
 
 
-var params = { allowScriptAccess: 'always', autoplay: 1 };
-var atts = { id: 'myytplayer', class: 'intro' };
-var vid = 'yjQG-vq8Q7I';
+// var params = { allowScriptAccess: 'always', autoplay: 1 };
+// var atts = { id: 'myytplayer', class: 'intro' };
+// var vid = 'yjQG-vq8Q7I';
 
-swfobject.embedSWF('http://www.youtube.com/v/' + vid + '?enablejsapi=1&playerapiid=ytplayer&version=3', 'player', '425', '356', '8', null, null, params, atts);
-
-
-function onYouTubePlayerReady(playerId) {
-  ytplayer = document.getElementById("myytplayer");
-  ytplayer.playVideo();
-}
-
-function onytplayerStateChange(newState) {
-  if(newState === 0) {
-    window.location = '/';
-  }
-}
+// swfobject.embedSWF('http://www.youtube.com/v/' + vid + '?enablejsapi=1&playerapiid=ytplayer&version=3', 'player', '425', '356', '8', null, null, params, atts);
 
 
-//  var tag = document.createElement('script');
-//  tag.src = "//www.youtube.com/iframe_api";
-//  var firstScriptTag = document.getElementsByTagName('script')[0];
-//  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+// function onYouTubePlayerReady(playerId) {
+//   ytplayer = document.getElementById("myytplayer");
+//   ytplayer.playVideo();
+// }
+
+// function onPlayerStateChange(event) {
+//   console.log(event);
+  
+//   if(newState === 0) {
+//     window.location = '/';
+//   }
+// }
+
+
+ var tag = document.createElement('script');
+ tag.src = "//www.youtube.com/iframe_api";
+ var firstScriptTag = document.getElementsByTagName('script')[0];
+ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
  
 
-// var player;
-// function onYouTubeIframeAPIReady() {
-//   player = new YT.Player('player', {
-//     height: '390',
-//     width: '640',
-//     videoId: $('#player').attr('vid'),
-//     events: {
-//       'onReady': onPlayerReady,
-//       'onStateChange': onPlayerStateChange
-//     }
-//   });
-// }
+var player;
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('player', {
+    height: '390',
+    width: '640',
+    videoId: $('#player').attr('vid'),
+    events: {
+      'onReady': onPlayerReady,
+      'onStateChange': onPlayerStateChange
+    }
+  });
+}
 
-// // autoplay video
-// function onPlayerReady(event) {
-//   event.target.playVideo();
-// }
+// autoplay video
+function onPlayerReady(event) {
+  event.target.playVideo();
+}
 
-// // when video ends
-// function onPlayerStateChange(event) {        
-//   if(event.data === 0) {            
-//     window.location = '/'
-//   };
-// }
+// when video ends
+function onPlayerStateChange(event) {        
+  if(event.data === 0) {            
+    window.location = '/';
+  };
+}
 
 
 $(document).ready(function() {
   
-  console.log($('#player').attr('vid'));
 //   $(".before").on({
 //     touchstart : function(){
 //       $(this).find("img").addClass("before2")
