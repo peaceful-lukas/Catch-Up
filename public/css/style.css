@@ -83,6 +83,12 @@ header .skip_red:hover {
   opacity:1;
 }
 
+header .skip_press {
+  position:absolute;
+  right:0;
+  top:-9px;
+}
+
 header .menu {
   position:absolute;
   right:22px;
@@ -107,39 +113,28 @@ header .menu a:hover {
 
 
 /* Intro page */
+
 .page-intro section article {
-  position: relative;
-  width: 100%;
-  height: 700px;
-  overflow: hidden;
+  max-width:640px;
+  margin:0 auto;
 }
 
-.page-intro section article .intro {
-  position: relative;
-  top: -140px;
+.page-intro section article .white-wrapper-top {
+  position:absolute;
+  top:0;
+  left:0;
   width:100%;
-  height:1000px;
-  z-index: 10;
+  /* height is controlled by function.js */
+  background:white;
 }
 
-.page-intro section article .white-wrapper-left {
-  top: 0;
-  left: 0;
-  position: absolute;
-  width: 200px;
-  height: 100%;
-  background: white;
-  z-index: 800;
-}
-
-.page-intro section article .white-wrapper-right {
-  top: 0;
-  right: 0;
-  position: absolute;
-  width: 200px;
-  height: 100%;
-  background: white;
-  z-index: 800;
+.page-intro section article .white-wrapper-bottom {
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  /* height is controlled by function.js */
+  background:white;
 }
 
 
@@ -433,7 +428,14 @@ footer address {
 
 
 
-@media screen and (max-width:1322px){
+
+/*@media screen and (max-width:650px){
+  .page-intro section article .intro { width:500px; margin:0 0 0 12%;}
+  .page-intro section article .white-wrapper-top { width:500px; height:23%; margin:0 0 0 12%;}
+  .page-intro section article .white-wrapper-bottom { width:500px; height:29s.1%; margin:0 0 0 12%;}
+}*/
+
+/*@media screen and (max-width:1322px){s
   .page-intro section article .white-wrapper-left,
   .page-intro section article .white-wrapper-right { width:50px;}
 }
@@ -489,7 +491,11 @@ footer address {
 @media screen and (max-width:460px){
   .page-intro section article { height:180px;}
   .page-intro section article iframe.intro { top:-455px;}
-}
+}*/
+
+
+
+
 
 @media screen and (min-width:901px){
   .popup .frame { position:fixed; left:0; right:0; top:190px;}
@@ -567,11 +573,12 @@ footer address {
 
 @media screen and (max-width:768px){
   header h1 { margin-left:5%;}
-  header .skip, header .skip_red { margin-right:5%;}
+  header .skip, header .skip_red, header .skip_press { margin-right:5%;}
   header h1 img { width:30%;}
-  header .skip, header .skip_red { width:10%; top:-8px;}
+  header .skip, header .skip_red, header .skip_press { width:10%; top:-8px;}
   header .menu { margin-right:2%; font-size:;}
-  section article .intro { margin:15% 0; height:25%;}
+  .page-intro section article { }
+  /*section article .intro { margin:15% 0; height:25%;}*/
   
   .cont_wrap { margin:0 5%;}
   section .content1 .eng { font-size:16px;}
@@ -584,30 +591,30 @@ footer address {
 }
 
 @media screen and (max-width:640px){
-  header .skip, header .skip_red { top:0px;}
+  header .skip, header .skip_red, header .skip_press { top:0px;}
 }
 
 @media screen and (max-width:500px){
   header h1.intro_logo { position:relative; top:-10px; padding:0 0 0 0;}
-  header .skip, header .skip_red { top:-17px;}
+  header .skip, header .skip_red, header .skip_press { top:-17px;}
 }
 
 @media screen and (max-width:450px){
   header h1.intro_logo { padding:0px 0 0 0;}
-  header .skip, header .skip_red { top:-15px;}
+  header .skip, header .skip_red, header .skip_press { top:-15px;}
 }
 
 @media screen and (max-width:400px){
-  header .skip, header .skip_red { top:-10px;}
+  header .skip, header .skip_red, header .skip_press { top:-10px;}
 }
 
 @media screen and (max-width:380px){
-  header .skip, header .skip_red { top:-12px;}
+  header .skip, header .skip_red, header .skip_press { top:-12px;}
 }
 
 @media screen and (max-width:350px){
   header h1.intro_logo { position:relative; top:-10px; padding:0px 0 0 0;}
-  header .skip, header .skip_red { top:-7px;}
+  header .skip, header .skip_red, header .skip_press { top:-7px;}
 }
 
 @media screen and (max-width:850px){

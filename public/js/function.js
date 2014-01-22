@@ -31,12 +31,16 @@
   return check;
 }
 
+var youtubeWidth = $(window).width() < 640 ? $(window).width() : 640;
+var youtubeHeight = youtubeWidth * 3/4;
+
 var player;
 function onYouTubePlayerAPIReady() {
   player = new YT.Player('player', {
-    height: '390',
-    width: '640',
+    width: youtubeWidth,
+    height: youtubeHeight,
     videoId: $('#player').attr('vid'),
+    playerVars: { 'showinfo': 0 },
     events: {
       'onError': onPlayerError,
       'onReady': onPlayerReady,
@@ -63,46 +67,35 @@ function onPlayerStateChange(event) {
   };
 }
 
+function resizeYoutubeVideoClip() {
+  var wrapperTop = 0;
+  if( $(window).width() <= 320)       wrapperTop = 29;
+  else if( $(window).width() <= 400 ) wrapperTop = 36;
+  else if( $(window).width() <= 500 ) wrapperTop = 49;
+  else if( $(window).width() <= 600 ) wrapperTop = 62;
+  else                                wrapperTop = 62;
+
+  var wrapperBottom = 0;
+  if( $(window).width() <= 320)       wrapperBottom = 34;
+  else if( $(window).width() <= 400 ) wrapperBottom = 41;
+  else if( $(window).width() <= 500 ) wrapperBottom = 54;
+  else if( $(window).width() <= 600 ) wrapperBottom = 67;
+  else                                wrapperBottom = 67;
+
+  $('.white-wrapper-top').css('height', wrapperTop);
+  $('.white-wrapper-bottom').css('height', wrapperBottom);
+}
+
 
 $(document).ready(function() {
   
-//   $(".before").on({
-//     touchstart : function(){
-//       $(this).find("img").addClass("before2")
-//     },
-//     touchend : function(){
-//       $(this).find("img").removeClass().addClass("before");
-//     }
-// });
-  // $('.before2').mouseenter(function(){
-  //   $('.before').hide();
-  // })
-  // $('.before2').mouseleave(function(){
-  //   $('.before').show();
-  // })
+  resizeYoutubeVideoClip();
 
-  // $('.before2').click(function(){
-  //   $('.before2').hide();
-  //   $('.before').show();
-  //   $('.before').mouseenter(function(){
-  //     $('.before2').show();
-  //   })
-  // })
-
-  // $('.after2').mouseenter(function(){
-  //   $('.after').hide();
-  // })
-  // $('.after2').mouseleave(function(){
-  //   $('.after').show();
-  // })
-
-  // $('.after2').click(function(){
-  //   $('.after2').hide();
-  //   $('.after').show();
-  //   $('.after').mouseenter(function(){
-  //     $('.after2').show();
-  //   })
-  // })
+  $('.skip_press').hide();
+  $('.skip_red').click(function(){
+    $('.skip_press').show();
+    $('.skip_red').hide();
+  })
 
 
   $('.skip_red').click(function(){
