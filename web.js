@@ -17,7 +17,7 @@ var app = express();
 require('./config/express')(app, config);
 require('./config/routes')(app);
 
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 8001;
 var server = http.createServer(app).listen(port);
 
 process.on('uncaughtException', function(err) {
