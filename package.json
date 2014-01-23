@@ -9,6 +9,7 @@
     "express": "3.4.6",
     "jade": "*",
     "mobile-agent": "0.0.8",
-    "sqlite3": "~2.2.0"
+    "sqlite3": "~2.2.0",
+    "connect": "*"
   }
 }
