@@ -63,7 +63,7 @@ function onPlayerReady(event) {
 // when video ends
 function onPlayerStateChange(event) {        
   if(event.data === 0) {            
-    window.location = '/';
+    window.location = '/main';
   };
 }
 
@@ -99,11 +99,11 @@ $(document).ready(function() {
 
 
   $('.skip_red').click(function(){
-    window.location = '/';
+    window.location = '/main';
   })
 
   $('.works').click(function(){
-    window.location = '/';
+    window.location = '/main';
   })
 
   $('.about').click(function(){

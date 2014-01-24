@@ -12,6 +12,9 @@ module.exports = {
     db.serialize(function() {
       if( !exists ) {
         db.run('CREATE TABLE showreel ( _id INTEGER PRIMARY KEY AUTOINCREMENT, youtubeVideoId TEXT, title TEXT, url TEXT, thumbnail TEXT )');
+        var stmt = db.prepare('INSERT INTO showreel ( youtubeVideoId, title, url, thumbnail ) VALUES (?, ?, ?, ?)');
+        stmt.run('LdQwTwBV6GI', 'Catch-Up 쇼릴', 'http://www.youtube.com/watch?v=LdQwTwBV6GI', 'http://img.youtube.com/vi/LdQwTwBV6GI/0.jpg');
+        stmt.finalize();
         console.log('showreel db created!');
       }
       else {

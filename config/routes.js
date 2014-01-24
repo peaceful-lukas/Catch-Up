@@ -9,8 +9,8 @@ var middlewares = [ userAagent, auth ];
 module.exports = function(app) {
   
   // HOME PAGE
-  app.get('/intro', pages.intro);
-  app.get('/', pages.main);
+  app.get('/', pages.intro);
+  app.get('/main', pages.main);
   app.get('/about', pages.about);
   
   
