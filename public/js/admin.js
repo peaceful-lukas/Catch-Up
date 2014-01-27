@@ -5,7 +5,7 @@ $(document).ready(function() {
   
   // 헤더
   $('img.homepage-over').click(function() {
-    window.location = '/intro';
+    window.location = '/';
   })
   
   $('img.logout-over').click(function() {

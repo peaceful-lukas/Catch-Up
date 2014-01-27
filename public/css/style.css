@@ -281,7 +281,7 @@ section article ul li .bu_blind:hover {
 }
 
 .popup .frame {
-  margin:0 auto;
+  /*margin:0 auto;*/
   max-width:650px;
 }
 

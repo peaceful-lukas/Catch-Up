@@ -24,7 +24,7 @@ module.exports = {
     var videos = [];
     
     db.serialize(function() {
-      db.each('SELECT * FROM video', function(err, row) {
+      db.each('SELECT * FROM video ORDER BY _id DESC', function(err, row) {
         if(err) throw new Error(err.message);
         else {
           row.vid = row.youtubeVideoId;
