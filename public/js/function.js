@@ -34,6 +34,8 @@ function onPlayerReady(event) {
   }
 }
 
+
+
 // when video ends
 function onPlayerStateChange(event) {        
   if(event.data === 0) {            
@@ -62,7 +64,24 @@ function resizeYoutubeVideoClip() {
 
 
 $(document).ready(function() {
+
+  // video info list thumbnail auto-sizing - 120 : 68
+  // var thumbSizeRatio = 68 / 120;
+  // var thumbSizeWidth = $('li.video-info').width();
+  // var containerSizeHeight = thumbSizeWidth * thumbSizeRatio;
+  // var thumbSizeHeight = containerSizeHeight + 2 * (11 * thumbSizeWidth) / 120;
+
+  // $('li.video-info').css('height', containerSizeHeight);
+  // $('.bu_blind').css('height', containerSizeHeight);
+  // $('.content').css('background-size', '100% ' + thumbSizeHeight + 'px');
+
   
+  // video info list thumbnail image clipping
+  var scaledThumbSizeWidth = $('li.video-info').height() * 120/68;
+  var scaledThumbSizeHeight = scaledThumbSizeWidth * 3/4;
+  $('.content').css('background-size', scaledThumbSizeWidth + 'px ' + scaledThumbSizeHeight + 'px');
+
+
   resizeYoutubeVideoClip();
 
   $('.skip_press').hide();
@@ -99,7 +118,6 @@ $(document).ready(function() {
   
   
   $('.youtubeplayer_total').text(vidURLs.length);
-  
   
   
   

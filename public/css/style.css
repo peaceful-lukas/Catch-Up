@@ -163,11 +163,12 @@ section article ul li {
   position: relative;
   margin:-1px 2px;
   width: 24%;
+  height:159px;
 }
 
 section article ul li .content {
   width: 100%;
-  height: 159px;
+  height: 100%;
 }
 
 section article ul li .play .btn_play {
@@ -429,74 +430,6 @@ footer address {
 
 
 
-/*@media screen and (max-width:650px){
-  .page-intro section article .intro { width:500px; margin:0 0 0 12%;}
-  .page-intro section article .white-wrapper-top { width:500px; height:23%; margin:0 0 0 12%;}
-  .page-intro section article .white-wrapper-bottom { width:500px; height:29s.1%; margin:0 0 0 12%;}
-}*/
-
-/*@media screen and (max-width:1322px){s
-  .page-intro section article .white-wrapper-left,
-  .page-intro section article .white-wrapper-right { width:50px;}
-}
-
-@media screen and (max-width:1295px){
-  .page-intro section article { height:600px;}
-  .page-intro section article iframe.intro { top:-200px;}
-}
-
-@media screen and (max-width:1000px){
-  .page-intro section article .white-wrapper-left,
-  .page-intro section article .white-wrapper-right { width:0px;}
-}
-
-@media screen and (max-width:1065px){
-  .page-intro section article { height:550px;}
-  .page-intro section article iframe.intro { top:-220px;} 
-}
-
-@media screen and (max-width:995px){
-  .page-intro section article { height:480px;}
-  .page-intro section article iframe.intro { top:-280px;} 
-}
-
-@media screen and (max-width:920px){
-  .page-intro section article iframe.intro { top:-250px;} 
-}
-
-@media screen and (max-width:880px){
-  .page-intro section article { height:450px;}
-  .page-intro section article iframe.intro { top:-280px;} 
-}
-
-@media screen and (max-width:800px){
-  .page-intro section article { height:430px;}
-  .page-intro section article iframe.intro { top:-290px;} 
-}
-
-@media screen and (max-width:768px){
-  .page-intro section article { height:410px;}
-  .page-intro section article iframe.intro { top:-400px;} 
-}
-
-@media screen and (max-width:680px){
-  .page-intro section article { height:300px;}
-  .page-intro section article iframe.intro { top:-450px;} 
-}
-
-@media screen and (max-width:580px){
-  .page-intro section article { height:250px;}
-}
-
-@media screen and (max-width:460px){
-  .page-intro section article { height:180px;}
-  .page-intro section article iframe.intro { top:-455px;}
-}*/
-
-
-
-
-
 @media screen and (min-width:901px){
   .popup .frame { position:fixed; left:0; right:0; top:190px;}
   .popup img.before { left:-100px;}
@@ -525,8 +458,9 @@ footer address {
 }
 
 @media screen and (min-width:320px) and (max-width:500px){
-  section article ul li .content,
-  section article ul li .bu_blind { height: 90px;}
+  section article ul li,
+  section article ul li .bu_blind { height:100px;}
+  section article ul li .content { width:100%; height:100%;}
 }
 
 @media screen and (min-width:320px) and (max-width:550px){
@@ -535,7 +469,7 @@ footer address {
   .popup img.before2 { top:388px; left:-3px;}
   .popup img.after { top:390px;}
   .popup img.after2 { top:388px; right:-3px;}
-  .popup .frame p { position:absolute; top:101%; left:41%;}
+  .popup .frame p { position:absolute; top:101%; left:45%;}
 }
 
 @media screen and (max-width:500px){
@@ -545,9 +479,8 @@ footer address {
   header .menu { top:12px; font-size:12px;} 
   section .content1 img { width:50%;}
   section .content1 span { font-size:18px;}
-  .popup .top h2 { font-size:14px;}
+  .popup .top h2 { font-size:12px;}
   .popup .top img.close, .popup .top img.close2 { top:20px;}
-
   #main-container { padding-top:61px;}
 }
 
@@ -576,8 +509,8 @@ footer address {
   header .skip, header .skip_red, header .skip_press { margin-right:5%;}
   header h1 img { width:30%;}
   header .skip, header .skip_red, header .skip_press { width:10%; top:-8px;}
-  header .menu { margin-right:2%; font-size:;}
-  .page-intro section article { }
+  header .menu { margin-right:2%;}
+
   /*section article .intro { margin:15% 0; height:25%;}*/
   
   .cont_wrap { margin:0 5%;}
@@ -622,8 +555,17 @@ footer address {
   .popup .top h2 { left:20px; top:20px;}
   .popup .top p { right:70px; top:20px;}
   .popup .top img.close, .popup .top img.close2  { right:25px; top:30px;}
-  
 }
+
+@media screen and (max-width:550px){
+  .popup .top h2 { left:20px; top:20px; width:200px; word-wrap:break-word;}
+}
+
+@media screen and (max-width:380px){
+  .popup .top h2 { left:10px; top:10px; font-size:11px; width:100px; word-wrap:break-word;}
+  .popup .top img.close, .popup .top img.close2 { right:10px;}
+}
+
 
 @media screen and (min-height:320px) and (max-height:1000px) and (max-width:850px){
   .popup img.before { top:95%;}
