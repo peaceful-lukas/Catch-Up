@@ -1,7 +1,7 @@
 var sqlite3 = require('sqlite3').verbose();
 var fs     = require('fs');
 
-var file = 'db/video.db';
+var file = '/home/hosting_users/catchuppro/apps/catchuppro_catchup/db/video.db';
 var db = new sqlite3.Database(file);
 
 module.exports = {
