@@ -37,10 +37,10 @@ function onPlayerReady(event) {
 
 
 // when video ends
-function onPlayerStateChange(event) {        
-  if(event.data === 0) {            
+function onPlayerStateChange(event) {
+  if(event.data === 0) {
     window.location = '/main';
-  };
+  }
 }
 
 function resizeYoutubeVideoClip() {
@@ -88,20 +88,20 @@ $(document).ready(function() {
   $('.skip_red').click(function(){
     $('.skip_press').show();
     $('.skip_red').hide();
-  })
+  });
 
 
   $('.skip_red').click(function(){
     window.location = '/main';
-  })
+  });
 
   $('.works').click(function(){
     window.location = '/main';
-  })
+  });
 
   $('.about').click(function(){
     window.location = '/about';
-  })
+  });
   
   var vidURLs = [];
   var vidTitles = [];
@@ -112,7 +112,7 @@ $(document).ready(function() {
     var youtubeUrl = 'http://www.youtube.com/embed/' + videoId + '?showinfo=0';
     vidURLs.push(youtubeUrl);
     
-    var videoTitle = $($videoInfo[i]).attr('title')
+    var videoTitle = $($videoInfo[i]).attr('title');
     vidTitles.push(videoTitle);
   }
   

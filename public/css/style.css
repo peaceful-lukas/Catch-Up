@@ -68,7 +68,7 @@ header .skip {
 
 header .skip:hover {
   opacity:0;
-  -ms-filter: alpha(opacity=0);
+  filter: alpha(opacity=0);
 }
 
 header .skip_red {
@@ -77,12 +77,12 @@ header .skip_red {
   top:-9px;
   cursor:pointer;
   opacity:0;
-  -ms-filter: alpha(opacity=0);
+  filter: alpha(opacity=0);
 }
 
 header .skip_red:hover {
   opacity:1;
-  -ms-filter: alpha(opacity=1);
+  filter: alpha(opacity=100);
 }
 
 header .skip_press {
@@ -186,12 +186,12 @@ section article ul li .bu_blind {
   height:159px;
   cursor:pointer;
   opacity:0;
-  -ms-filter: alpha(opacity=0);
+  filter: alpha(opacity=0);
 }
 
 section article ul li .bu_blind:hover {
   opacity:0.7;
-  -ms-filter: alpha(opacity=0.7);
+  filter: alpha(opacity=70);
 }
 
 /* popup part  */
@@ -205,7 +205,7 @@ section article ul li .bu_blind:hover {
   height:100%;
   background:#000;
   opacity:0.8;
-  -ms-filter: alpha(opacity=0.8);
+  filter: alpha(opacity=70);
   z-index:1000;
 }
 
@@ -225,7 +225,7 @@ section article ul li .bu_blind:hover {
   text-align:left;
   cursor:pointer;
   opacity:1;
-  -ms-filter: alpha(opacity=1);
+  filter: alpha(opacity=100);
 }
 
 /*.popup img.before:hover {
@@ -234,7 +234,7 @@ section article ul li .bu_blind:hover {
 
 .popup img.before:active {
   opacity:0;
-  -ms-filter: alpha(opacity=0);
+  filter: alpha(opacity=0);
 }
 
 
@@ -246,7 +246,7 @@ section article ul li .bu_blind:hover {
   text-align:left;
   cursor:pointer;
   opacity:0;
-  -ms-filter: alpha(opacity=0);
+  filter: alpha(opacity=0);
 }
 
 /*.popup img.before2:hover {
@@ -255,7 +255,7 @@ section article ul li .bu_blind:hover {
 
 .popup img.before2:active {
   opacity:1;
-  -ms-filter: alpha(opacity=1);
+  filter: alpha(opacity=100);
 }
 
 .popup img.after {
@@ -264,7 +264,7 @@ section article ul li .bu_blind:hover {
   right:0;
   cursor:pointer;
   opacity:1;
-  -ms-filter: alpha(opacity=1);
+  filter: alpha(opacity=100);
 }
 
 /*.popup img.after:hover {
@@ -273,7 +273,7 @@ section article ul li .bu_blind:hover {
 
 .popup img.after:active {
   opacity:0;
-  -ms-filter: alpha(opacity=0);
+  filter: alpha(opacity=0);
 }
 
 .popup img.after2 {
@@ -282,7 +282,7 @@ section article ul li .bu_blind:hover {
   right:-3px;
   cursor:pointer;
   opacity:0;
-  -ms-filter: alpha(opacity=0);
+  filter: alpha(opacity=0);
 }
 
 /*.popup img.after2:hover {
@@ -291,7 +291,7 @@ section article ul li .bu_blind:hover {
 
 .popup img.after2:active {
   opacity:1;
-  -ms-filter: alpha(opacity=1);
+  filter: alpha(opacity=100);
 }
 
 .popup .frame {
@@ -332,7 +332,7 @@ section article ul li .bu_blind:hover {
 
 .popup .top img.close:hover {
   opacity:0;
-  -ms-filter: alpha(opacity=0);
+  filter: alpha(opacity=0);
 }
 
 .popup .top img.close2 {
@@ -341,12 +341,12 @@ section article ul li .bu_blind:hover {
   top:39px;
   cursor:pointer;
   opacity:0;
-  -ms-filter: alpha(opacity=0);
+  filter: alpha(opacity=0);
 }
 
 .popup .top img.close2:hover {
   opacity:1;
-  -ms-filter: alpha(opacity=1);
+  filter: alpha(opacity=100);
 }
 
 .popup .frame iframe {
@@ -593,6 +593,11 @@ footer address {
 
 @media screen and (min-height:641px){
   /*.popup .frame .top p { position:fixed; top:80%; left:-59px;} */
+}
+
+@media screen and (max-width:380px){
+  footer small, footer address { font-size:10px;}
+  footer small { top:10px;}
 }
 
 
