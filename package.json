@@ -6,9 +6,9 @@
     "start": "node web.js"
   },
   "dependencies": {
+    "mobile-agent": "0.0.8",
     "express": "3.4.6",
     "jade": "*",
-    "mobile-agent": "0.0.8",
     "sqlite3": "~2.2.0"
   }
 }
