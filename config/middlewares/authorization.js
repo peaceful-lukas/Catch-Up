@@ -6,7 +6,7 @@ module.exports = {
 		}
     
     else if( !req.session.adminCode && req.body.adminCode ) {
-      var check = ( req.body.adminCode === 'testcode' );
+      var check = ( req.body.adminCode === 'cuhappy2014' );
       
       if(check) {
         req.session.adminCode = req.body.adminCode;
